@@ -4,6 +4,10 @@ Temp
 obj
 bin
 .vs
+Assets/ArtRes
+Assets/ArtRes.meta
+Assets/Scripts
+Assets/Scripts.meta
 
 .idea
 *.sln
