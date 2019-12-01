@@ -63,15 +63,9 @@ public class TypeTest : MonoBehaviour
         {
             sb.AppendLine(type.FullName);
 
-            PropertyInfo[] ps = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
-            foreach(var p in ps)
-            {
-                if(p.CanRead)
-                {
-                    sb.AppendLine("\t" + p.Name + ":" + p.GetValue(type));
-
-                }
-            }
+            sb.AppendLine("\tIsClass : " + type.IsClass);
+            sb.AppendLine("\tIsPrimitive : " + type.IsPrimitive);
+            sb.AppendLine("\tIsValueType : " + type.IsValueType);
 
             sb.AppendLine();
         }
