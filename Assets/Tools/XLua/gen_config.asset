@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0060fb12eab879f459bc256ea6c8683a, type: 3}
   m_Name: gen_config
   m_EditorClassIdentifier: 
-  callCSharpTypeNames: []
+  callCSharpTypeNames:
+  - UnityEngine.GameObject
+  - UnityEngine.RectTransform
+  - UnityEngine.Transform
+  - Dot.Core.UI.SpriteAtlasImageAnimation
+  - Dot.Core.UI.SpriteAtlasImage
+  - Dot.Core.UI.DynamicAtlasImage
+  - Dot.Core.UI.SpriteAtlasImageAnimation+AnimationPlayMode
+  - UnityEngine.Camera
+  - UnityEngine.Texture2D
   callLuaTypeNames: []
   optimizeTypeNames: []
-  blackDatas: []
+  callCSharpGenericTypeNames:
+  - System.Collections.Generic.List`1@System.Int32
+  callLuaGenericTypeNames: []
+  blackDatas:
+  - UnityEngine.GameObject@networkView
