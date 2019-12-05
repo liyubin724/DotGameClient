@@ -12,13 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0060fb12eab879f459bc256ea6c8683a, type: 3}
   m_Name: gen_config
   m_EditorClassIdentifier: 
-  callCSharpTypeNames:
-  - Dot.Core.Avatar.AvatarPartType
-  - UnityEngine.Vector3
-  - UnityEngine.Vector3Int
+  callCSharpTypeNames: []
   callLuaTypeNames: []
-  optimizeTypeNames:
-  - Dot.Core.Avatar.AvatarPartType
-  - UnityEngine.Vector3
-  - UnityEngine.Vector3Int
+  optimizeTypeNames: []
   blackDatas: []
