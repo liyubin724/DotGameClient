@@ -26,6 +26,7 @@ MonoBehaviour:
   optimizeTypeNames: []
   callCSharpGenericTypeNames:
   - System.Collections.Generic.List`1@System.Int32
-  callLuaGenericTypeNames: []
+  callLuaGenericTypeNames:
+  - System.Action`2@XLua.LuaTable@System.Single
   blackDatas:
   - UnityEngine.GameObject@networkView
