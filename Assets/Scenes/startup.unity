@@ -341,4 +341,4 @@ MonoBehaviour:
   - scriptFileName: StartUp
     scriptFilePath: StartUp
   luaEnvType: 1
-  luaMgrName: LuaManager
+  luaMgrName: GameManager
