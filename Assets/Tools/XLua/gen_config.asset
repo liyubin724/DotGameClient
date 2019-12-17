@@ -25,6 +25,7 @@ MonoBehaviour:
   - UnityEngine.MonoBehaviour
   - UnityEngine.Application
   - UnityEngine.Component
+  - Dot.Lua.Loader.ProtobufFileLoader
   callLuaTypeNames: []
   optimizeTypeNames: []
   callCSharpGenericTypeNames:
