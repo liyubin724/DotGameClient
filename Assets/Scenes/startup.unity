@@ -342,3 +342,5 @@ MonoBehaviour:
     scriptFilePath: StartUp
   luaEnvType: 1
   luaMgrName: GameManager
+  editorLogConfig: {fileID: 4900000, guid: f137c96a3734deb4192d688bba5f093a, type: 3}
+  runtimeLogConfig: {fileID: 4900000, guid: f137c96a3734deb4192d688bba5f093a, type: 3}
