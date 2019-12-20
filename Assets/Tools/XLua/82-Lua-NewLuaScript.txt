@@ -1,23 +1,30 @@
+----private----
+--Constructor 
 #NAME# = Class(function(self)
 
 end)
 
+----protected----
 function #NAME#:DoAwake()
 
 end
 
+----protected----
 function #NAME#:DoEnable()
 
 end
 
+----protected----
 function #NAME#:DoStart()
 
 end
 
+----protected----
 function #NAME#:DoDisable()
 
 end
 
+----protected----
 function #NAME#:DoDestroy()
 
 end
