@@ -33,6 +33,9 @@ MonoBehaviour:
   - System.Collections.Generic.List`1@System.Int32
   callLuaGenericTypeNames:
   - System.Action`2@XLua.LuaTable@System.Single
+  - System.Func`3@XLua.LuaTable@System.Int32@System.String
+  - System.Action`1@XLua.LuaTable
+  - System.Action`3@XLua.LuaTable@XLua.LuaTable@System.Int32
   blackDatas:
   - UnityEngine.GameObject@networkView
   - UnityEngine.MonoBehaviour@runInEditMode
