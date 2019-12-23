@@ -16,10 +16,10 @@ MonoBehaviour:
   - UnityEngine.GameObject
   - UnityEngine.RectTransform
   - UnityEngine.Transform
-  - Dot.Core.UI.SpriteAtlasImageAnimation
-  - Dot.Core.UI.SpriteAtlasImage
-  - Dot.Core.UI.DynamicAtlasImage
-  - Dot.Core.UI.SpriteAtlasImageAnimation+AnimationPlayMode
+  - Dot.UI.SpriteAtlasImageAnimation
+  - Dot.UI.SpriteAtlasImage
+  - Dot.UI.DynamicAtlasImage
+  - Dot.UI.SpriteAtlasImageAnimation+AnimationPlayMode
   - UnityEngine.Camera
   - UnityEngine.Texture2D
   - UnityEngine.MonoBehaviour
