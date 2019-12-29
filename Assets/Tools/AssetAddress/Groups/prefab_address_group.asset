@@ -23,6 +23,11 @@ MonoBehaviour:
     fileNameRegex: \w*.prefab$
     inAnyFolderNames: 
     inParentFolderNames: 
+  - assetFolder: Assets/ArtRes/Test
+    isIncludeSubfolder: 0
+    fileNameRegex: \w*.mat$
+    inAnyFolderNames: 
+    inParentFolderNames: 
   operation:
     packMode: 1
     addressMode: 1

@@ -8,6 +8,7 @@ Assets/ArtRes
 Assets/ArtRes.meta
 Assets/Scripts
 Assets/Scripts.meta
+AssetConfig
 
 .idea
 *.sln

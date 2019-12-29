@@ -15,23 +15,57 @@ MonoBehaviour:
   addressDatas:
   - assetAddress: common_atlas
     assetPath: Assets/ArtRes/UI/Atlas/common_atlas.spriteatlas
-    bundlePath: Assets/ArtRes/UI/Atlas/common_atlas_spriteatlas
+    bundlePath: assets/artres/ui/atlas/common_atlas_spriteatlas
     labels:
     - atlas
+    isPreload: 0
+    isNeverDestroy: 0
   - assetAddress: emoji_atlas
     assetPath: Assets/ArtRes/UI/Atlas/emoji_atlas.spriteatlas
-    bundlePath: Assets/ArtRes/UI/Atlas/emoji_atlas_spriteatlas
+    bundlePath: assets/artres/ui/atlas/emoji_atlas_spriteatlas
     labels:
     - atlas
-  - assetAddress: TestChildBind.prefab
-    assetPath: Assets/ArtRes/Test/TestChildBind.prefab
-    bundlePath: Assets/ArtRes/Test/TestChildBind_prefab
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: Capsule.prefab
+    assetPath: Assets/ArtRes/Test/Capsule.prefab
+    bundlePath: assets/artres/test/capsule_prefab
     labels: []
-  - assetAddress: TestLuaScriptBind.prefab
-    assetPath: Assets/ArtRes/Test/TestLuaScriptBind.prefab
-    bundlePath: Assets/ArtRes/Test/TestLuaScriptBind_prefab
+    isPreload: 1
+    isNeverDestroy: 1
+  - assetAddress: Cube.prefab
+    assetPath: Assets/ArtRes/Test/Cube.prefab
+    bundlePath: assets/artres/test/cube_prefab
     labels: []
-  - assetAddress: TestObjectBind.prefab
-    assetPath: Assets/ArtRes/Test/TestObjectBind.prefab
-    bundlePath: Assets/ArtRes/Test/TestObjectBind_prefab
+    isPreload: 1
+    isNeverDestroy: 1
+  - assetAddress: Cylinder.prefab
+    assetPath: Assets/ArtRes/Test/Cylinder.prefab
+    bundlePath: assets/artres/test/cylinder_prefab
     labels: []
+    isPreload: 1
+    isNeverDestroy: 1
+  - assetAddress: Plane.prefab
+    assetPath: Assets/ArtRes/Test/Plane.prefab
+    bundlePath: assets/artres/test/plane_prefab
+    labels: []
+    isPreload: 1
+    isNeverDestroy: 1
+  - assetAddress: ScrollViewRoot.prefab
+    assetPath: Assets/ArtRes/Test/ScrollViewRoot.prefab
+    bundlePath: assets/artres/test/scrollviewroot_prefab
+    labels: []
+    isPreload: 1
+    isNeverDestroy: 1
+  - assetAddress: Sphere.prefab
+    assetPath: Assets/ArtRes/Test/Sphere.prefab
+    bundlePath: assets/artres/test/sphere_prefab
+    labels: []
+    isPreload: 1
+    isNeverDestroy: 1
+  - assetAddress: New Material.mat
+    assetPath: Assets/ArtRes/Test/New Material.mat
+    bundlePath: assets/artres/test/new_material_mat
+    labels: []
+    isPreload: 1
+    isNeverDestroy: 1
