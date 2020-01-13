@@ -30,7 +30,7 @@ MonoBehaviour:
     inParentFolderNames: 
   operation:
     packMode: 1
-    addressMode: 1
+    addressMode: 2
     bundleNameType: 0
     labels: 
     compressionType: 1
