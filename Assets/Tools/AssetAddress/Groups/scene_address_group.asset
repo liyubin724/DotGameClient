@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a3cc40a1bda9d143a252568ba145d0f, type: 3}
-  m_Name: atlas_address_group
+  m_Name: scene_address_group
   m_EditorClassIdentifier: 
-  groupName: Atlas
+  groupName: Scene
   isEnable: 1
   isMain: 1
   isPreload: 0
   isNeverDestroy: 0
   finders:
-  - assetFolder: Assets/ArtRes/UI/Atlas
+  - assetFolder: Assets/Scenes/InnerScene
     isIncludeSubfolder: 0
-    fileNameRegex: \w*.spriteatlas
+    fileNameRegex: \w*.unity$
     inAnyFolderNames: 
     inParentFolderNames: 
   operation:
     packMode: 1
     addressMode: 2
     bundleNameType: 0
-    labels: atlas
+    labels: 
     compressionType: 1

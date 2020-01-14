@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3cc40a1bda9d143a252568ba145d0f, type: 3}
   m_Name: prefab_address_group
   m_EditorClassIdentifier: 
-  groupName: Asset Address Group
+  groupName: Prefab
   isEnable: 1
   isMain: 1
-  isPreload: 1
-  isNeverDestroy: 1
+  isPreload: 0
+  isNeverDestroy: 0
   finders:
   - assetFolder: Assets/ArtRes/Test
     isIncludeSubfolder: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     inAnyFolderNames: 
     inParentFolderNames: 
   operation:
-    packMode: 1
+    packMode: 0
     addressMode: 2
     bundleNameType: 0
     labels: 
