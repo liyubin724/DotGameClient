@@ -29,7 +29,7 @@ MonoBehaviour:
     inAnyFolderNames: 
     inParentFolderNames: 
   operation:
-    packMode: 0
+    packMode: 1
     addressMode: 2
     bundleNameType: 0
     labels: 
