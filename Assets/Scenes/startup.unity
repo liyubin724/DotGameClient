@@ -320,7 +320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79ddffee578e0d47a5e9187d27d59e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  envType: 1
   luaAsset:
     scriptFileName: UIManager
     scriptFilePath: Dot/UI/UIManager
@@ -379,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiCamera: {fileID: 757095277}
   uiCanvas: {fileID: 1874275788}
-  uiMgr: {fileID: 0}
+  uiMgr: {fileID: 335623851}
 --- !u!1 &732547923
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,8 +722,6 @@ MonoBehaviour:
   preloadLuaAssets:
   - scriptFileName: StartUp
     scriptFilePath: StartUp
-  luaEnvType: 1
-  luaMgrName: GameManager
 --- !u!1 &1874275784
 GameObject:
   m_ObjectHideFlags: 0
