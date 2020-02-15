@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b8da5ccc4ff234485c45c3114add1d, type: 3}
+  m_Name: test01_creator_preview
+  m_EditorClassIdentifier: 
+  dataName: test01_creator
+  skeletonPefabs:
+  - {fileID: 8398646948811320179, guid: e9e42ad3ff04d8e48aebeef5a36864b4, type: 3}
+  - {fileID: 4047774173581031394, guid: e69c591c9081fd243a117693a38c820b, type: 3}
+  partDatas:
+  - {fileID: 11400000, guid: 8830859caf831f94793f8e5a849b62fe, type: 2}
+  - {fileID: 11400000, guid: 5f59d6e270a241449b74f199ab2ea151, type: 2}
+  - {fileID: 11400000, guid: 1c8f17025a50d964eb901794052f38eb, type: 2}
+  - {fileID: 11400000, guid: 655412ea02c2cda4fb0bd345e6ac3f83, type: 2}
