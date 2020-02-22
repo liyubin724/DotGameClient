@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56b8da5ccc4ff234485c45c3114add1d, type: 3}
-  m_Name: test01_creator_preview
+  m_Name: test01_006_creator_preview
   m_EditorClassIdentifier: 
-  dataName: test01_creator
+  dataName: test01_006_creator
   skeletonPefabs:
   - {fileID: 8398646948811320179, guid: e9e42ad3ff04d8e48aebeef5a36864b4, type: 3}
-  - {fileID: 4047774173581031394, guid: e69c591c9081fd243a117693a38c820b, type: 3}
   partDatas:
   - {fileID: 11400000, guid: 8830859caf831f94793f8e5a849b62fe, type: 2}
   - {fileID: 11400000, guid: 5f59d6e270a241449b74f199ab2ea151, type: 2}

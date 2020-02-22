@@ -9,20 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a96d09d3623400409edc51782048f1d, type: 3}
-  m_Name: test01_creator
+  m_Script: {fileID: 11500000, guid: aa453938db2927e46822ec128949b930, type: 3}
+  m_Name: test01_006_creator
   m_EditorClassIdentifier: 
-  dataName: test01_creator
+  dataName: test01_006_creator
   isEnable: 1
   skeletonCreatorDatas:
   - dataName: ch_pc_hou_006
     isEnable: 1
     savedDir: Assets/ArtRes/Characters/Player/Test01/Prefab
     fbxPrefab: {fileID: 100062, guid: 7556dece0bd2244b59ff85ac005aeab3, type: 3}
-  - dataName: ch_pc_hou_008
-    isEnable: 1
-    savedDir: Assets/ArtRes/Characters/Player/Test01/Prefab
-    fbxPrefab: {fileID: 100062, guid: 68e35bde153074328a641f6a8cbca738, type: 3}
   partCreatorDatas:
   - dataName: ch_pc_hou_006_jiao
     isEnable: 1
