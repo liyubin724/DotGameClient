@@ -1,126 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5601693895262045991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b1fa65dda7c3b34eb2f19101cd7852e, type: 3}
-  m_Name: Weapon Part
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -472, y: 200}
-  ports:
-    keys:
-    - part
-    values:
-    - _fieldName: part
-      _node: {fileID: -5601693895262045991}
-      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: weaponPart
-        node: {fileID: 6416191669133035100}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  partType: 5
-  selectedIndex: -1
-  part: {fileID: 0}
---- !u!114 &-1122434682494473724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b1fa65dda7c3b34eb2f19101cd7852e, type: 3}
-  m_Name: Head Part
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -487.5, y: -269}
-  ports:
-    keys:
-    - part
-    values:
-    - _fieldName: part
-      _node: {fileID: -1122434682494473724}
-      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: headPart
-        node: {fileID: 6416191669133035100}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  partType: 4
-  selectedIndex: -1
-  part: {fileID: 0}
---- !u!114 &-886200349234927398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fea28d436d6c2541bac0adecb45b56b, type: 3}
-  m_Name: Skeleton
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -120, y: -344}
-  ports:
-    keys:
-    - skeletonPrefab
-    values:
-    - _fieldName: skeletonPrefab
-      _node: {fileID: -886200349234927398}
-      _typeQualifiedName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: skeletonPrefab
-        node: {fileID: 6416191669133035100}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  skeletonPrefab: {fileID: 0}
-  selectedIndex: -1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745ea6f0bb2817444a9ccac66dd9d6d9, type: 3}
-  m_Name: preview_graph
-  m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 6416191669133035100}
-  - {fileID: -1122434682494473724}
-  - {fileID: 3974865372864377163}
-  - {fileID: 5344629910821883634}
-  - {fileID: 3327898657157373744}
-  - {fileID: -5601693895262045991}
-  - {fileID: -886200349234927398}
-  skeletonList: []
-  partList: []
---- !u!114 &3327898657157373744
+--- !u!114 &-8531922886703108279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,21 +19,81 @@ MonoBehaviour:
     - part
     values:
     - _fieldName: part
-      _node: {fileID: 3327898657157373744}
+      _node: {fileID: -8531922886703108279}
       _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: feetPart
-        node: {fileID: 6416191669133035100}
+        node: {fileID: 889762480422362044}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   partType: 1
+  selectedIndex: 0
+  part: {fileID: 0}
+--- !u!114 &-3716825862402370931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1fa65dda7c3b34eb2f19101cd7852e, type: 3}
+  m_Name: Weapon Part
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -472, y: 200}
+  ports:
+    keys:
+    - part
+    values:
+    - _fieldName: part
+      _node: {fileID: -3716825862402370931}
+      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: weaponPart
+        node: {fileID: 889762480422362044}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  partType: 5
   selectedIndex: -1
   part: {fileID: 0}
---- !u!114 &3974865372864377163
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745ea6f0bb2817444a9ccac66dd9d6d9, type: 3}
+  m_Name: test01_008_creator_preview_graph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 889762480422362044}
+  - {fileID: 3901005182381160892}
+  - {fileID: 704447757267445420}
+  - {fileID: 7008396594373040120}
+  - {fileID: -8531922886703108279}
+  - {fileID: -3716825862402370931}
+  - {fileID: 5419303715895825689}
+  skeletonList:
+  - {fileID: 4047774173581031394, guid: e69c591c9081fd243a117693a38c820b, type: 3}
+  partList:
+  - {fileID: 11400000, guid: 3825a054737c1814b93060d685d9d681, type: 2}
+  - {fileID: 11400000, guid: f1a4ba87142ab6c409cede2f53f2a7b0, type: 2}
+  - {fileID: 11400000, guid: 303884325346f6143aa1a95925d3c158, type: 2}
+  - {fileID: 11400000, guid: 12bcdbfc92b751a488b46ea766b1f794, type: 2}
+--- !u!114 &704447757267445420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,21 +112,187 @@ MonoBehaviour:
     - part
     values:
     - _fieldName: part
-      _node: {fileID: 3974865372864377163}
+      _node: {fileID: 704447757267445420}
       _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: bodyPart
-        node: {fileID: 6416191669133035100}
+        node: {fileID: 889762480422362044}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   partType: 2
-  selectedIndex: -1
+  selectedIndex: 0
   part: {fileID: 0}
---- !u!114 &5344629910821883634
+--- !u!114 &889762480422362044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14115b5a7fe5e6744b8965eafb058ce8, type: 3}
+  m_Name: Preview
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 72, y: -120}
+  ports:
+    keys:
+    - skeletonPrefab
+    - headPart
+    - bodyPart
+    - handPart
+    - feetPart
+    - weaponPart
+    values:
+    - _fieldName: skeletonPrefab
+      _node: {fileID: 889762480422362044}
+      _typeQualifiedName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: skeletonPrefab
+        node: {fileID: 5419303715895825689}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: headPart
+      _node: {fileID: 889762480422362044}
+      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: part
+        node: {fileID: 3901005182381160892}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: bodyPart
+      _node: {fileID: 889762480422362044}
+      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: part
+        node: {fileID: 704447757267445420}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: handPart
+      _node: {fileID: 889762480422362044}
+      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: part
+        node: {fileID: 7008396594373040120}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: feetPart
+      _node: {fileID: 889762480422362044}
+      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: part
+        node: {fileID: -8531922886703108279}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: weaponPart
+      _node: {fileID: 889762480422362044}
+      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: part
+        node: {fileID: -3716825862402370931}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  skeletonPrefab: {fileID: 0}
+  headPart: {fileID: 0}
+  bodyPart: {fileID: 0}
+  handPart: {fileID: 0}
+  feetPart: {fileID: 0}
+  weaponPart: {fileID: 0}
+--- !u!114 &3901005182381160892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1fa65dda7c3b34eb2f19101cd7852e, type: 3}
+  m_Name: Head Part
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -487.5, y: -269}
+  ports:
+    keys:
+    - part
+    values:
+    - _fieldName: part
+      _node: {fileID: 3901005182381160892}
+      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: headPart
+        node: {fileID: 889762480422362044}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  partType: 4
+  selectedIndex: 0
+  part: {fileID: 0}
+--- !u!114 &5419303715895825689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fea28d436d6c2541bac0adecb45b56b, type: 3}
+  m_Name: Skeleton
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -120, y: -344}
+  ports:
+    keys:
+    - skeletonPrefab
+    values:
+    - _fieldName: skeletonPrefab
+      _node: {fileID: 5419303715895825689}
+      _typeQualifiedName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: skeletonPrefab
+        node: {fileID: 889762480422362044}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  skeletonPrefab: {fileID: 0}
+  selectedIndex: 0
+--- !u!114 &7008396594373040120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,118 +311,17 @@ MonoBehaviour:
     - part
     values:
     - _fieldName: part
-      _node: {fileID: 5344629910821883634}
+      _node: {fileID: 7008396594373040120}
       _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: handPart
-        node: {fileID: 6416191669133035100}
+        node: {fileID: 889762480422362044}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   partType: 3
-  selectedIndex: -1
+  selectedIndex: 0
   part: {fileID: 0}
---- !u!114 &6416191669133035100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14115b5a7fe5e6744b8965eafb058ce8, type: 3}
-  m_Name: Preview
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 152, y: -152}
-  ports:
-    keys:
-    - skeletonPrefab
-    - headPart
-    - bodyPart
-    - handPart
-    - feetPart
-    - weaponPart
-    values:
-    - _fieldName: skeletonPrefab
-      _node: {fileID: 6416191669133035100}
-      _typeQualifiedName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: skeletonPrefab
-        node: {fileID: -886200349234927398}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: headPart
-      _node: {fileID: 6416191669133035100}
-      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: part
-        node: {fileID: -1122434682494473724}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: bodyPart
-      _node: {fileID: 6416191669133035100}
-      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: part
-        node: {fileID: 3974865372864377163}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: handPart
-      _node: {fileID: 6416191669133035100}
-      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: part
-        node: {fileID: 5344629910821883634}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: feetPart
-      _node: {fileID: 6416191669133035100}
-      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: part
-        node: {fileID: 3327898657157373744}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: weaponPart
-      _node: {fileID: 6416191669133035100}
-      _typeQualifiedName: Dot.Entity.Avatar.AvatarPartData, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: part
-        node: {fileID: -5601693895262045991}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  skeletonPrefab: {fileID: 0}
-  headPart: {fileID: 0}
-  bodyPart: {fileID: 0}
-  handPart: {fileID: 0}
-  feetPart: {fileID: 0}
-  weaponPart: {fileID: 0}
