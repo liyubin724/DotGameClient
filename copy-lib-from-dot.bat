@@ -33,4 +33,7 @@ REM -----------------------------------------------------------------------
 COPY %LibDir%\DotEditor\bin\Debug\DotEditor.dll %EditorTargetDir%
 COPY %LibDir%\DotEditor\bin\Debug\DotEditor.pdb %EditorTargetDir%
 
+COPY %LibDir%\Tools\DotTool.ScriptGenerate\bin\Debug\DotTool.ScriptGenerate.dll %EditorTargetDir%
+COPY %LibDir%\Tools\DotTool.ScriptGenerate\bin\Debug\DotTool.ScriptGenerate.pdb %EditorTargetDir%
+
 PAUSE
