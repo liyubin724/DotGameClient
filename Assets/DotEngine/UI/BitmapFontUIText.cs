@@ -12,20 +12,39 @@ namespace DotEngine.UI
 
         protected override void OnTextChanged(string mappedText)
         {
-            if(uiText == null)
+            if (uiText == null)
             {
-                uiText = GetComponent<Text>();
+                Debug.LogError("BitmapFontUIText::OnTextChanged->the field(uiText) is empty!");
             }
-
-            if(uiText!=null)
+            else
             {
-                if(uiText.font != FontData.bmFont)
+                if (FontData.bmFont != null && uiText.font != FontData.bmFont)
                 {
                     uiText.font = FontData.bmFont;
                 }
                 uiText.text = mappedText;
             }
         }
+
+#if UNITY_EDITOR
+        protected override void OnValidate()
+        {
+            if(uiText!=null)
+            {
+                if (FontData != null && FontData.bmFont != null)
+                {
+                    if(uiText.font != FontData.bmFont)
+                    {
+                        uiText.font = FontData.bmFont;
+                    }
+                }else
+                {
+                    uiText.font = null;
+                }
+            }
+            base.OnValidate();
+        }
+#endif
     }
 }
 

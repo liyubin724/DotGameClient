@@ -13,6 +13,7 @@ namespace DotEditor.UI
         protected override void OnEnable()
         {
             uiTextProperty = serializedObject.FindProperty("uiText");
+
             base.OnEnable();
         }
 
