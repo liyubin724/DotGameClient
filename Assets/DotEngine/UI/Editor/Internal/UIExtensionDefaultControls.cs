@@ -95,5 +95,12 @@ namespace DotEditor.UI
             go.AddComponent<BitmapFontUIText>();
             return go;
         }
+
+        //public static GameObject CreateRoundRectImage(Resources resources)
+        //{
+        //    GameObject go = CreateUIElementRoot("RoundRectImage", s_ImageElementSize);
+        //    go.AddComponent<UIRoundRectImage>();
+        //    return go;
+        //}
     }
 }

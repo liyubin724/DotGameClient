@@ -1,36 +1,36 @@
-﻿using DotEngine.UI;
-using UnityEditor;
-using UnityEditor.UI;
+﻿//using DotEngine.UI;
+//using UnityEditor;
+//using UnityEditor.UI;
 
-namespace DotEditor.UI
-{
-    [CustomEditor(typeof(UIRoundRectImage), true)]
-    [CanEditMultipleObjects]
-    public class UIRoundRectImageEditor : ImageEditor
-    {
-        protected SerializedProperty m_FillCenter;
-        protected SerializedProperty m_Radius;
+//namespace DotEditor.UI
+//{
+//    [CustomEditor(typeof(UIRoundRectImage), true)]
+//    [CanEditMultipleObjects]
+//    public class UIRoundRectImageEditor : ImageEditor
+//    {
+//        protected SerializedProperty m_FillCenter;
+//        protected SerializedProperty m_Radius;
 
-        protected override void OnEnable()
-        {
-            base.OnEnable();
+//        protected override void OnEnable()
+//        {
+//            base.OnEnable();
 
-            m_FillCenter = serializedObject.FindProperty("m_FillCenter");
-            m_Radius = serializedObject.FindProperty("m_Radius");
-        }
+//            m_FillCenter = serializedObject.FindProperty("m_FillCenter");
+//            m_Radius = serializedObject.FindProperty("m_Radius");
+//        }
 
-        public override void OnInspectorGUI()
-        {
-            serializedObject.Update();
+//        public override void OnInspectorGUI()
+//        {
+//            serializedObject.Update();
 
-            SpriteGUI();
-            AppearanceControlsGUI();
-            RaycastControlsGUI();
+//            SpriteGUI();
+//            AppearanceControlsGUI();
+//            RaycastControlsGUI();
 
-            EditorGUILayout.PropertyField(m_FillCenter);
-            EditorGUILayout.PropertyField(m_Radius);
+//            EditorGUILayout.PropertyField(m_FillCenter);
+//            EditorGUILayout.PropertyField(m_Radius);
 
-            serializedObject.ApplyModifiedProperties();
-        }
-    }
-}
+//            serializedObject.ApplyModifiedProperties();
+//        }
+//    }
+//}

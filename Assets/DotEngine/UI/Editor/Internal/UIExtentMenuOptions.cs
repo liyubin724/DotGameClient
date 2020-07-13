@@ -41,13 +41,21 @@ namespace DotEditor.UI
             PlaceUIElementRoot(go, menuCommand);
         }
 
-        [MenuItem("GameObject/UI/DotEngine.UI/Bitmap Text", false, 1000)]
+        //[MenuItem("GameObject/UI/DotEngine.UI/RoundRect Image", false, 1001)]
+        //static public void AddRoundRectImage(MenuCommand menuCommand)
+        //{
+        //    GameObject go = UIExtensionDefaultControls.CreateRoundRectImage(GetStandardResources());
+        //    PlaceUIElementRoot(go, menuCommand);
+        //}
+
+        [MenuItem("GameObject/UI/DotEngine.UI/Bitmap Text", false, 1002)]
         static public void AddBitmapText(MenuCommand menuCommand)
         {
             GameObject go = UIExtensionDefaultControls.CreateBitmapText(GetStandardResources());
             PlaceUIElementRoot(go, menuCommand);
         }
 
+        
         private static void SetPositionVisibleinSceneView(RectTransform canvasRTransform, RectTransform itemTransform)
         {
             // Find the best scene view
