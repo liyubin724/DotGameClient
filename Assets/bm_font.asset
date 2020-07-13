@@ -48,3 +48,30 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 743463c49afb3c64782347f6d12570b4, type: 3}
     - {fileID: 2800000, guid: 3472690f2faa8bc4392af6ca65ccb4b8, type: 3}
     - {fileID: 2800000, guid: 9e0949fefa71869439e04005627232a1, type: 3}
+  - fontName: state
+    charSpace: 0
+    chars: ea957f90385436654d517c705566
+    textures:
+    - {fileID: 2800000, guid: f6991253437e4b34d910ef12601e514b, type: 3}
+    - {fileID: 2800000, guid: 6dbf45fae0b648d4998097e95f6473cb, type: 3}
+    - {fileID: 2800000, guid: c677e60375613c545a175ea0db153538, type: 3}
+    - {fileID: 2800000, guid: f7d2de5c7aabb454e9b6c6a0d25767da, type: 3}
+    - {fileID: 2800000, guid: d01d1bce19aca2740a5f5bf40a64dc29, type: 3}
+    - {fileID: 2800000, guid: f96d512574e37d9428074a78eaf61343, type: 3}
+    - {fileID: 2800000, guid: 8c192c77e36de98429e833f494528939, type: 3}
+  - fontName: white
+    charSpace: -4
+    chars: 2b002d003000310032003300340035003600370038003900
+    textures:
+    - {fileID: 2800000, guid: f859d6c4208c320499dd599347a150a7, type: 3}
+    - {fileID: 2800000, guid: 115c2e4bea4ace4409abe11cf6542fa8, type: 3}
+    - {fileID: 2800000, guid: e58102141a17ca34e972776ce1cf5e7c, type: 3}
+    - {fileID: 2800000, guid: 031676635aae85742a214045601bc714, type: 3}
+    - {fileID: 2800000, guid: 6c934e92c10d5eb42a36a919d15cb78a, type: 3}
+    - {fileID: 2800000, guid: 54ab9818111131944b6c852aa6cbcc99, type: 3}
+    - {fileID: 2800000, guid: aef7b8695970c104fab777a8a4b1d124, type: 3}
+    - {fileID: 2800000, guid: 4de7e6d0bdf0fb1478f8b219db09d516, type: 3}
+    - {fileID: 2800000, guid: 808b4cee3714949458179302e2551c1b, type: 3}
+    - {fileID: 2800000, guid: a23a27cf93858654f89ad340d9e91a7c, type: 3}
+    - {fileID: 2800000, guid: 379755787a3772a4f88b1cd3dd4c7d5d, type: 3}
+    - {fileID: 2800000, guid: 6df83a4054f8b2749812945f8693745f, type: 3}
