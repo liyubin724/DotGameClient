@@ -8,19 +8,19 @@ namespace DotEngine.UI
     public class UIAtlasImage : Image
     {
         [SerializeField]
-        private SpriteAtlas m_atlas;
+        private SpriteAtlas m_SpriteAtlas;
         public SpriteAtlas Atlas
         {
             get
             {
-                return m_atlas;
+                return m_SpriteAtlas;
             }
             set
             {
-                if (value != null && value != m_atlas)
+                if (m_SpriteAtlas != value)
                 {
-                    m_atlas = value;
-                    SpriteName = "";
+                    m_SpriteAtlas = value;
+                    ChangeSprite();
                 }
             }
         }
@@ -35,20 +35,10 @@ namespace DotEngine.UI
             }
             set
             {
-                if (m_atlas != null)
+                if (m_SpriteName != value)
                 {
-                    if (m_SpriteName != value)
-                    {
-                        m_SpriteName = value;
-                        if (string.IsNullOrEmpty(m_SpriteName))
-                        {
-                            sprite = null;
-                        }
-                        else
-                        {
-                            sprite = m_atlas.GetSprite(m_SpriteName);
-                        }
-                    }
+                    m_SpriteName = value;
+                    ChangeSprite();
                 }
             }
         }
@@ -56,18 +46,32 @@ namespace DotEngine.UI
         protected override void Awake()
         {
             base.Awake();
-            if (m_atlas != null)
+            if (sprite == null)
             {
-                if (string.IsNullOrEmpty(m_SpriteName))
+                ChangeSprite();
+            }
+            else
+            {
+                string sn = sprite.name.Replace("(Clone)", "");
+                if (sn != SpriteName)
                 {
-                    sprite = null;
-                }
-                else
-                {
-                    sprite = m_atlas.GetSprite(m_SpriteName);
+                    ChangeSprite();
                 }
             }
         }
+
+        private void ChangeSprite()
+        {
+            sprite = Atlas ? Atlas.GetSprite(SpriteName) : null;
+        }
+
+#if UNITY_EDITOR
+        protected override void OnValidate()
+        {
+            ChangeSprite();
+            base.OnValidate();
+        }
+#endif
     }
 
 }

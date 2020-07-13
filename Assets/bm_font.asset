@@ -75,3 +75,19 @@ MonoBehaviour:
     - {fileID: 2800000, guid: a23a27cf93858654f89ad340d9e91a7c, type: 3}
     - {fileID: 2800000, guid: 379755787a3772a4f88b1cd3dd4c7d5d, type: 3}
     - {fileID: 2800000, guid: 6df83a4054f8b2749812945f8693745f, type: 3}
+  - fontName: orange
+    charSpace: 0
+    chars: 2b002d003000310032003300340035003600370038003900
+    textures:
+    - {fileID: 2800000, guid: a667a252a3c55c840b72ad7de1858f68, type: 3}
+    - {fileID: 2800000, guid: 1c66d3fc478b1ab4fbad6718b58ea720, type: 3}
+    - {fileID: 2800000, guid: 7e4c3a63e2d58704e8c9f785ecd84732, type: 3}
+    - {fileID: 2800000, guid: bb8ac2880cc10e149860273f8fd96db3, type: 3}
+    - {fileID: 2800000, guid: c986cd24c1eeef14481e2a1fbc2ef4fa, type: 3}
+    - {fileID: 2800000, guid: 47e468b589ed0234f87de5d372eaf273, type: 3}
+    - {fileID: 2800000, guid: 8efe61a5efde09048895fb6093db969f, type: 3}
+    - {fileID: 2800000, guid: 46423990c32643d4ca957279371b4faa, type: 3}
+    - {fileID: 2800000, guid: 442584699ec6b0445aa59c742e356daa, type: 3}
+    - {fileID: 2800000, guid: 20ab9095df63ea14998f07b5c7992e07, type: 3}
+    - {fileID: 2800000, guid: cf73b88469deef9458310803571fba42, type: 3}
+    - {fileID: 2800000, guid: 775e7187c24449a4d83d0ca6202046cd, type: 3}

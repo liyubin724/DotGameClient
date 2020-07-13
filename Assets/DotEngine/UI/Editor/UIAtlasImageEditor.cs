@@ -1,136 +1,158 @@
-﻿using DotEditor.GUIExtension.Windows;
-using DotEditor.UI;
-using System;
+﻿using DotEditor.GUIExtension;
+using DotEngine.UI;
+using System.IO;
+using System.Linq;
 using UnityEditor;
+using UnityEditor.AnimatedValues;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.U2D;
-using UnityObject = UnityEngine.Object;
+using UIIMageType = UnityEngine.UI.Image.Type;
 
-namespace DotEngine.UI.Editor
+namespace DotEditor.UI
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(UIAtlasImage), true)]
     public class UIAtlasImageEditor : ImageEditor
     {
-        private GUIContent m_AtlasContent;
-        private SerializedProperty m_Atlas;
+        private SerializedProperty m_SpriteAtlas;
         private SerializedProperty m_SpriteName;
 
-        private string[] m_SpriteInAtlasNames = null;
+        private AnimBool animShowType;
+        private SerializedProperty m_PreserveAspect;
+        private SerializedProperty m_Type;
+
         protected override void OnEnable()
         {
             base.OnEnable();
-            m_AtlasContent = new GUIContent("");
-            m_Atlas = serializedObject.FindProperty("m_atlas");
+            m_SpriteAtlas = serializedObject.FindProperty("m_SpriteAtlas");
             m_SpriteName = serializedObject.FindProperty("m_SpriteName");
+            m_Type = serializedObject.FindProperty("m_Type");
+            m_PreserveAspect = serializedObject.FindProperty("m_PreserveAspect");
+
+            animShowType = new AnimBool(m_SpriteAtlas.objectReferenceValue && !string.IsNullOrEmpty(m_SpriteName.stringValue));
+            animShowType.valueChanged.AddListener(new UnityAction(base.Repaint));
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-            var spriteAtlas = m_Atlas.objectReferenceValue as SpriteAtlas;
-            if (spriteAtlas != null && m_SpriteInAtlasNames == null)
-            {
-                m_SpriteInAtlasNames = GetSpriteNames(spriteAtlas);
-            }
-            EditorGUI.BeginChangeCheck();
-            {
-                GUILayout.BeginVertical();
-                {
-                    GUILayout.BeginHorizontal();
-                    if (GUILayout.Button("Atlas", "DropDown", GUILayout.Width(76f)))
-                        ComponentSelector.Show<SpriteAtlas>(OnSelectAtlas);
-                    EditorGUILayout.PropertyField(m_Atlas, m_AtlasContent);
-                    GUILayout.EndHorizontal();
-                }
-                GUILayout.EndVertical();
-            }
-            if (EditorGUI.EndChangeCheck())
-            {
-                if (spriteAtlas == null)
-                {
-                    m_SpriteInAtlasNames = new string[0];
-                }
-                else
-                {
-                    m_SpriteInAtlasNames = GetSpriteNames(spriteAtlas);
-                }
-            }
-            if (m_SpriteInAtlasNames != null && m_SpriteInAtlasNames.Length > 0)
-            {
-                GUILayout.BeginHorizontal();
-                {
-                    if (GUILayout.Button("Sprite", "DropDown", GUILayout.Width(76f)))
-                    {
-                        UISetting.atlas = spriteAtlas;
-                        UISetting.selectedSprite = m_SpriteName.stringValue;
-                        SpriteSelector.Show(SelectSprite);
-                    }
-                    int index = Array.IndexOf(m_SpriteInAtlasNames, m_SpriteName.stringValue);
-                    if (index < 0)
-                        index = 0;
 
-                    index = EditorGUILayout.Popup("", index, m_SpriteInAtlasNames);
-                    string newSpriteName = m_SpriteInAtlasNames[index];
+            DrawSpriteAtlas();
+            AppearanceControlsGUI();
+            RaycastControlsGUI();
+            DrawTypeGUI();
+            DrawImageType();
+            DrawNativeSize();
 
-                    if (m_SpriteName.stringValue != newSpriteName)
-                    {
-                        Array.ForEach<UnityObject>(targets, (t) =>
-                        {
-                            (t as UIAtlasImage).SpriteName = newSpriteName;
-                        });
-                    }
-                }
-                GUILayout.EndHorizontal();
-            }
-            else
-            {
-                Array.ForEach<UnityObject>(targets, (t) =>
-                {
-                    (t as UIAtlasImage).SpriteName = "";
-                });
-            }
             serializedObject.ApplyModifiedProperties();
-
-            EditorGUILayout.Space();
-            base.OnInspectorGUI();
-
         }
 
-        void OnSelectAtlas(UnityObject obj)
+        protected void DrawSpriteAtlas()
         {
-            serializedObject.Update();
-            SerializedProperty sp = serializedObject.FindProperty("m_atlas");
-            sp.objectReferenceValue = obj;
-            serializedObject.ApplyModifiedProperties();
-            EditorUtility.SetDirty(serializedObject.targetObject);
-            UISetting.atlas = obj as SpriteAtlas;
+            DrawAtlasPopupLayout(new GUIContent("Sprite Atlas"), new GUIContent("----"), m_SpriteAtlas);
+            EGUI.BeginIndent();
+            {
+                DrawSpritePopup(m_SpriteAtlas.objectReferenceValue as SpriteAtlas, m_SpriteName);
+            }
+            EGUI.EndIndent();
         }
 
-        void SelectSprite(string spriteName)
+        protected void DrawTypeGUI()
         {
-            Array.ForEach<UnityObject>(targets, (t) =>
+            animShowType.target = m_SpriteAtlas.objectReferenceValue && !string.IsNullOrEmpty(m_SpriteName.stringValue);
+            if (EditorGUILayout.BeginFadeGroup(animShowType.faded))
+                this.TypeGUI();
+            EditorGUILayout.EndFadeGroup();
+        }
+
+        protected void DrawImageType()
+        {
+            UIIMageType imageType = (UIIMageType)m_Type.intValue;
+            base.SetShowNativeSize(imageType == UIIMageType.Simple || imageType == UIIMageType.Filled, false);
+        }
+
+        protected void DrawNativeSize()
+        {
+            if (EditorGUILayout.BeginFadeGroup(m_ShowNativeSize.faded))
             {
-                (t as UIAtlasImage).SpriteName = spriteName;
+                EditorGUI.indentLevel++;
+                EditorGUILayout.PropertyField(m_PreserveAspect);
+                EditorGUI.indentLevel--;
+            }
+            EditorGUILayout.EndFadeGroup();
+            base.NativeSizeButtonGUI();
+        }
+
+        private void DrawAtlasPopupLayout(GUIContent label, GUIContent nullLabel, SerializedProperty atlas, UnityAction<SpriteAtlas> onChange = null, params GUILayoutOption[] option)
+        {
+            DrawAtlasPopup(GUILayoutUtility.GetRect(GUIContent.none, EditorStyles.popup, option), label, nullLabel, atlas, onChange);
+        }
+
+        private void DrawAtlasPopup(Rect rect, GUIContent label, GUIContent nullLabel, SerializedProperty atlas, UnityAction<SpriteAtlas> onSelect = null)
+        {
+            DrawAtlasPopup(rect, label, nullLabel, atlas.objectReferenceValue as SpriteAtlas, obj =>
+            {
+                atlas.objectReferenceValue = obj;
+                onSelect?.Invoke(obj as SpriteAtlas);
+                atlas.serializedObject.ApplyModifiedProperties();
             });
         }
 
-        private string[] GetSpriteNames(SpriteAtlas atlas)
+        private void DrawAtlasPopup(Rect rect, GUIContent label, GUIContent nullLabel, SpriteAtlas atlas, UnityAction<SpriteAtlas> onSelect = null)
         {
-            string[] names = new string[0];
-            Sprite[] mSprite = new Sprite[atlas.spriteCount];
-            atlas.GetSprites(mSprite);
-            if (mSprite.Length > 0)
+            rect = EditorGUI.PrefixLabel(rect, label);
+
+            if (GUI.Button(rect, atlas ? new GUIContent(atlas.name) : nullLabel, EditorStyles.popup))
             {
-                string[] mSpriteName = new string[mSprite.Length];
-                for (int i = 0; i < mSprite.Length; ++i)
+                GenericMenu gm = new GenericMenu();
+                gm.AddItem(nullLabel, !atlas, () => onSelect(null));
+
+                foreach (string path in AssetDatabase.FindAssets("t:" + typeof(SpriteAtlas).Name).Select(x => AssetDatabase.GUIDToAssetPath(x)))
                 {
-                    mSpriteName[i] = mSprite[i].name.Replace("(Clone)", "");
+                    string displayName = Path.GetFileNameWithoutExtension(path);
+                    gm.AddItem(
+                        new GUIContent(displayName),
+                        atlas && (atlas.name == displayName),
+                        x => onSelect(x == null ? null : AssetDatabase.LoadAssetAtPath((string)x, typeof(SpriteAtlas)) as SpriteAtlas),
+                        path
+                    );
                 }
-                names = mSpriteName;
+
+                gm.DropDown(rect);
             }
-            return names;
+        }
+
+        private void DrawSpritePopup(SpriteAtlas atlas, SerializedProperty spriteProperty)
+        {
+            GUIContent label = new GUIContent(spriteProperty.displayName, spriteProperty.tooltip);
+            string spriteName = string.IsNullOrEmpty(spriteProperty.stringValue) ? "----" : spriteProperty.stringValue;
+
+            using (new EditorGUI.DisabledGroupScope(!atlas))
+            {
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    EditorGUILayout.PrefixLabel(label);
+                    if (GUILayout.Button(string.IsNullOrEmpty(spriteName) ? "-" : spriteName, "minipopup") && atlas)
+                    {
+                        AtlasSpriteSelector.Show(atlas, spriteName, (selectedSpriteName) =>
+                        {
+                            OnSpriteSelectedCallback(spriteProperty, selectedSpriteName);
+                        });
+                    }
+                }
+            }
+        }
+
+        protected virtual void OnSpriteSelectedCallback(SerializedProperty spriteProperty, string spriteName)
+        {
+            if (string.IsNullOrEmpty(spriteName))
+                return;
+
+            spriteProperty.serializedObject.Update();
+            spriteProperty.stringValue = spriteName;
+            spriteProperty.serializedObject.ApplyModifiedProperties();
         }
     }
 }
