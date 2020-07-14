@@ -89,6 +89,13 @@ namespace DotEditor.UI
             return go;
         }
 
+        public static GameObject CreateAtlasImageAnimation(Resources resources)
+        {
+            GameObject go = CreateUIElementRoot("AtlasImageAnimation", s_ImageElementSize);
+            go.AddComponent<UIAtlasImageAnimation>();
+            return go;
+        }
+
         public static GameObject CreateBitmapText(Resources resources)
         {
             GameObject go = CreateUIElementRoot("BitmapText", s_ImageElementSize);
@@ -96,11 +103,5 @@ namespace DotEditor.UI
             return go;
         }
 
-        //public static GameObject CreateRoundRectImage(Resources resources)
-        //{
-        //    GameObject go = CreateUIElementRoot("RoundRectImage", s_ImageElementSize);
-        //    go.AddComponent<UIRoundRectImage>();
-        //    return go;
-        //}
     }
 }

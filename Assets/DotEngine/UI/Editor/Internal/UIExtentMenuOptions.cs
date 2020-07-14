@@ -41,12 +41,12 @@ namespace DotEditor.UI
             PlaceUIElementRoot(go, menuCommand);
         }
 
-        //[MenuItem("GameObject/UI/DotEngine.UI/RoundRect Image", false, 1001)]
-        //static public void AddRoundRectImage(MenuCommand menuCommand)
-        //{
-        //    GameObject go = UIExtensionDefaultControls.CreateRoundRectImage(GetStandardResources());
-        //    PlaceUIElementRoot(go, menuCommand);
-        //}
+        [MenuItem("GameObject/UI/DotEngine.UI/Atlas Image Animation", false, 1001)]
+        static public void AddAtlasImageAnimation(MenuCommand menuCommand)
+        {
+            GameObject go = UIExtensionDefaultControls.CreateAtlasImageAnimation(GetStandardResources());
+            PlaceUIElementRoot(go, menuCommand);
+        }
 
         [MenuItem("GameObject/UI/DotEngine.UI/Bitmap Text", false, 1002)]
         static public void AddBitmapText(MenuCommand menuCommand)
