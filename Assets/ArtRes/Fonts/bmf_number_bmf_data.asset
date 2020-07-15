@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -579286336, guid: 696d4dd225d9e154daf5104de6fc7b87, type: 3}
+  m_Name: bmf_number_bmf_data
+  m_EditorClassIdentifier: 
+  bmFont: {fileID: 12800000, guid: 6fc9fd5395aecc1449c92228eed7f0af, type: 2}
+  charMaps:
+  - name: Red
+    orgChars: 2d002b003000310032003300340035003600370038003900
+    mapChars: 004e014e024e034e044e054e064e074e084e094e0a4e0b4e
+  - name: Yellow
+    orgChars: 2b002d003000310032003300340035003600370038003900
+    mapChars: 0c4e0d4e0e4e0f4e104e114e124e134e144e154e164e174e
+  - name: state
+    orgChars: ea957f90385436654d517c705566
+    mapChars: 184e194e1a4e1b4e1c4e1d4e1e4e
+  - name: white
+    orgChars: 2b002d003000310032003300340035003600370038003900
+    mapChars: 1f4e204e214e224e234e244e254e264e274e284e294e2a4e
+  - name: orange
+    orgChars: 2b002d003000310032003300340035003600370038003900
+    mapChars: 2b4e2c4e2d4e2e4e2f4e304e314e324e334e344e354e364e

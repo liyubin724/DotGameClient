@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1492591792, guid: 26a9683362869fb4f97fac8f42f3ed52, type: 3}
+  m_Name: bmf_number
+  m_EditorClassIdentifier: 
+  outputAssetDir: Assets/ArtRes/Fonts
+  padding: 2
+  maxSize: 1024
+  fontChars:
+  - fontName: Red
+    charSpace: 0
+    chars: 2d002b003000310032003300340035003600370038003900
+    textures:
+    - {fileID: 2800000, guid: 5949f296e3a021d418904fcb3ea79071, type: 3}
+    - {fileID: 2800000, guid: 91ff16a050e65fb41a2249843ac24a85, type: 3}
+    - {fileID: 2800000, guid: ec7cf94baa3d6db49824c2d3dac62816, type: 3}
+    - {fileID: 2800000, guid: 791f495a6c8690441b875f99b132e312, type: 3}
+    - {fileID: 2800000, guid: 374852d43edd33c419eb2eb2bd8879ee, type: 3}
+    - {fileID: 2800000, guid: b0c0811b6fa9dd144b96950f4b6205b8, type: 3}
+    - {fileID: 2800000, guid: d16c299ba77675b449f359bfd2a6bf7f, type: 3}
+    - {fileID: 2800000, guid: 90ca5f60314305f448cac1d776fd4165, type: 3}
+    - {fileID: 2800000, guid: 97f55811719dee145b295c8a73106b03, type: 3}
+    - {fileID: 2800000, guid: e4a4543f69371b0438d5c78cbcd8146b, type: 3}
+    - {fileID: 2800000, guid: d2ae4782de7964d4fa082d69efe3dae6, type: 3}
+    - {fileID: 2800000, guid: d340db547f8d33941825638dfb13c08f, type: 3}
+  - fontName: Yellow
+    charSpace: 0
+    chars: 2b002d003000310032003300340035003600370038003900
+    textures:
+    - {fileID: 2800000, guid: 7c7f557d29130dc40a18fe27d187b5c4, type: 3}
+    - {fileID: 2800000, guid: 2625a9cdf6831574b8cd2c65ed63fa07, type: 3}
+    - {fileID: 2800000, guid: 4a9b4632b66e4bd4d945687374afe2c4, type: 3}
+    - {fileID: 2800000, guid: 3dd525fc174142f41b8121ce5499f8d1, type: 3}
+    - {fileID: 2800000, guid: 8c3a2812fe2c67048bf7dc04aff911aa, type: 3}
+    - {fileID: 2800000, guid: a794f60bf185b6649afb04db79f4e913, type: 3}
+    - {fileID: 2800000, guid: eb209d830e74561428badb4f06342a1e, type: 3}
+    - {fileID: 2800000, guid: 37e8374dae184704ea64a7497afca035, type: 3}
+    - {fileID: 2800000, guid: 70067bc835e5cb34b9354f1169230860, type: 3}
+    - {fileID: 2800000, guid: 743463c49afb3c64782347f6d12570b4, type: 3}
+    - {fileID: 2800000, guid: 3472690f2faa8bc4392af6ca65ccb4b8, type: 3}
+    - {fileID: 2800000, guid: 9e0949fefa71869439e04005627232a1, type: 3}
+  - fontName: state
+    charSpace: 0
+    chars: ea957f90385436654d517c705566
+    textures:
+    - {fileID: 2800000, guid: f6991253437e4b34d910ef12601e514b, type: 3}
+    - {fileID: 2800000, guid: 6dbf45fae0b648d4998097e95f6473cb, type: 3}
+    - {fileID: 2800000, guid: c677e60375613c545a175ea0db153538, type: 3}
+    - {fileID: 2800000, guid: f7d2de5c7aabb454e9b6c6a0d25767da, type: 3}
+    - {fileID: 2800000, guid: d01d1bce19aca2740a5f5bf40a64dc29, type: 3}
+    - {fileID: 2800000, guid: f96d512574e37d9428074a78eaf61343, type: 3}
+    - {fileID: 2800000, guid: 8c192c77e36de98429e833f494528939, type: 3}
+  - fontName: white
+    charSpace: -4
+    chars: 2b002d003000310032003300340035003600370038003900
+    textures:
+    - {fileID: 2800000, guid: f859d6c4208c320499dd599347a150a7, type: 3}
+    - {fileID: 2800000, guid: 115c2e4bea4ace4409abe11cf6542fa8, type: 3}
+    - {fileID: 2800000, guid: e58102141a17ca34e972776ce1cf5e7c, type: 3}
+    - {fileID: 2800000, guid: 031676635aae85742a214045601bc714, type: 3}
+    - {fileID: 2800000, guid: 6c934e92c10d5eb42a36a919d15cb78a, type: 3}
+    - {fileID: 2800000, guid: 54ab9818111131944b6c852aa6cbcc99, type: 3}
+    - {fileID: 2800000, guid: aef7b8695970c104fab777a8a4b1d124, type: 3}
+    - {fileID: 2800000, guid: 4de7e6d0bdf0fb1478f8b219db09d516, type: 3}
+    - {fileID: 2800000, guid: 808b4cee3714949458179302e2551c1b, type: 3}
+    - {fileID: 2800000, guid: a23a27cf93858654f89ad340d9e91a7c, type: 3}
+    - {fileID: 2800000, guid: 379755787a3772a4f88b1cd3dd4c7d5d, type: 3}
+    - {fileID: 2800000, guid: 6df83a4054f8b2749812945f8693745f, type: 3}
+  - fontName: orange
+    charSpace: 0
+    chars: 2b002d003000310032003300340035003600370038003900
+    textures:
+    - {fileID: 2800000, guid: a667a252a3c55c840b72ad7de1858f68, type: 3}
+    - {fileID: 2800000, guid: 1c66d3fc478b1ab4fbad6718b58ea720, type: 3}
+    - {fileID: 2800000, guid: 7e4c3a63e2d58704e8c9f785ecd84732, type: 3}
+    - {fileID: 2800000, guid: bb8ac2880cc10e149860273f8fd96db3, type: 3}
+    - {fileID: 2800000, guid: c986cd24c1eeef14481e2a1fbc2ef4fa, type: 3}
+    - {fileID: 2800000, guid: 47e468b589ed0234f87de5d372eaf273, type: 3}
+    - {fileID: 2800000, guid: 8efe61a5efde09048895fb6093db969f, type: 3}
+    - {fileID: 2800000, guid: 46423990c32643d4ca957279371b4faa, type: 3}
+    - {fileID: 2800000, guid: 442584699ec6b0445aa59c742e356daa, type: 3}
+    - {fileID: 2800000, guid: 20ab9095df63ea14998f07b5c7992e07, type: 3}
+    - {fileID: 2800000, guid: cf73b88469deef9458310803571fba42, type: 3}
+    - {fileID: 2800000, guid: 775e7187c24449a4d83d0ca6202046cd, type: 3}

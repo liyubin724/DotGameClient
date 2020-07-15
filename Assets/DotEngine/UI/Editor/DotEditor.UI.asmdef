@@ -1,0 +1,14 @@
+{
+    "name": "DotEditor.UI",
+    "references": [
+        "GUID:3a4937e421ac6194b8cb13993396f5df"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
