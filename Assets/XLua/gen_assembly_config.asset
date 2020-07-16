@@ -19,13 +19,3 @@ MonoBehaviour:
   - Name: UnityEngine.AnimationModule
     SpaceList:
     - UnityEngine
-  - Name: Assembly-CSharp
-    SpaceList:
-    - 
-    - DotEngine.Lua
-    - DotEngine.Lua.Register
-    - SuperScrollView
-    - XLua
-    - XLua.Cast
-    - XLua.LuaDLL
-    - XLua.TemplateEngine

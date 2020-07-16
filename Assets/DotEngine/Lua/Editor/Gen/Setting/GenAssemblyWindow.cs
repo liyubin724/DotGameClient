@@ -10,21 +10,17 @@ namespace DotEditor.Lua.Gen
 {
     public class GenAssemblyWindow : EditorWindow
     {
-        class AssemblyData
-        {
-            public string AssemblyName;
-            public bool isFoldout = false;
-            public List<string> SpaceList = new List<string>();
-        }
-        [MenuItem("Test/Test GenAssembly")]
-        public static void ShowWin(Action callback = null)
+        [MenuItem("Game/XLua/1 Gen Assembly Window",priority =1)]
+        public static GenAssemblyWindow ShowWin()
         {
             var win = GetWindow<GenAssemblyWindow>();
-            win.titleContent = new GUIContent("Gen Assembly");
-            win.closedCallback = callback;
+            win.titleContent = new GUIContent("Assembly Setting");
             win.Show();
+            return win;
         }
-        private Action closedCallback = null;
+        
+        public Action ClosedCallback { get; set; }
+
         private GenAssemblyConfig assemblyConfig;
         private List<AssemblyData> assemblyDatas = new List<AssemblyData>();
 
@@ -39,6 +35,10 @@ namespace DotEditor.Lua.Gen
             foreach (var assembly in assemblies)
             {
                 string name = assembly.GetName().Name;
+                if(name.IndexOf("Editor")>=0)
+                {
+                    continue;
+                }
                 AssemblyData data = new AssemblyData()
                 {
                     AssemblyName = name,
@@ -81,7 +81,33 @@ namespace DotEditor.Lua.Gen
                 searchField.autoSetFocusOnFindCommand = true;
             }
 
-            searchText = searchField.OnGUI(searchText);
+            EditorGUILayout.BeginHorizontal(EditorStyles.toolbar);
+            {
+                if(GUILayout.Button("Collapse",EditorStyles.toolbarButton,GUILayout.Width(80)))
+                {
+                    assemblyDatas.ForEach((d) =>
+                    {
+                        d.isFoldout = false;
+                    });
+                }
+                if (GUILayout.Button("Expand", EditorStyles.toolbarButton, GUILayout.Width(80)))
+                {
+                    assemblyDatas.ForEach((d) =>
+                    {
+                        d.isFoldout = true;
+                    });
+                }
+
+                if (GUILayout.Button("Clear All", EditorStyles.toolbarButton, GUILayout.Width(80)))
+                {
+                    assemblyConfig.Clear();
+                }
+
+                GUILayout.FlexibleSpace();
+
+                searchText = searchField.OnToolbarGUI(searchText);
+            }
+            EditorGUILayout.EndHorizontal();
 
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos, EditorStyles.helpBox);
             {
@@ -94,13 +120,13 @@ namespace DotEditor.Lua.Gen
                         data.isFoldout = EditorGUI.Foldout(foldoutRect, data.isFoldout, data.AssemblyName, true);
 
                         Rect btnRect = new Rect(rect.x + rect.width - 60, rect.y, 60, rect.height);
-                        if (GUI.Button(btnRect, "None"))
+                        if (GUI.Button(btnRect, "None",EditorStyles.miniButtonRight))
                         {
                             assemblyConfig.RemoveAssembly(data.AssemblyName);
                         }
 
                         btnRect.x -= btnRect.width;
-                        if (GUI.Button(btnRect, "All"))
+                        if (GUI.Button(btnRect, "All", EditorStyles.miniButtonLeft))
                         {
                             assemblyConfig.AddAssembly(data.AssemblyName, data.SpaceList.ToArray());
                         }
@@ -149,12 +175,22 @@ namespace DotEditor.Lua.Gen
 
         private void OnDestroy()
         {
-            closedCallback?.Invoke();
+            ClosedCallback?.Invoke();
         }
 
         private void OnLostFocus()
         {
-            Close();
+            if(ClosedCallback!=null)
+            {
+                Close();
+            }
+        }
+
+        class AssemblyData
+        {
+            public string AssemblyName;
+            public bool isFoldout = false;
+            public List<string> SpaceList = new List<string>();
         }
     }
 }

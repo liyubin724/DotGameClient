@@ -15,7 +15,7 @@ namespace DotEditor.Lua.Gen
         {
             get
             {
-                return "Assets/Scripts/XLuaGen";
+                return "Assets/Scripts/CSScripts/XLuaGen";
             }
         }
 

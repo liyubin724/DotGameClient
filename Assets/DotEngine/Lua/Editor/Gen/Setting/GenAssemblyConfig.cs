@@ -69,6 +69,11 @@ namespace DotEditor.Lua.Gen
             }
         }
 
+        public void Clear()
+        {
+            datas.Clear();
+        }
+
         public bool HasAssembly(string assemblyName)
         {
             return GetData(assemblyName) != null;

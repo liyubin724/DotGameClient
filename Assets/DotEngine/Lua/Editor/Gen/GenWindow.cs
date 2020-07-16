@@ -7,7 +7,7 @@ namespace DotEditor.Lua.Gen
 {
     public class GenWindow : EditorWindow
     {
-        [MenuItem("Game/XLua/Gen Window")]
+        [MenuItem("Game/XLua/2 Gen Window",priority =2)]
         public static void ShowWin()
         {
             var win = GetWindow<GenWindow>();
@@ -61,10 +61,11 @@ namespace DotEditor.Lua.Gen
 
                 if(GUILayout.Button("Setting",EditorStyles.toolbarButton,GUILayout.Width(60)))
                 {
-                    GenAssemblyWindow.ShowWin(() =>
+                    var win = GenAssemblyWindow.ShowWin();
+                    win.ClosedCallback = () =>
                     {
                         data = new GenData();
-                    });
+                    };
                 }
 
             }
