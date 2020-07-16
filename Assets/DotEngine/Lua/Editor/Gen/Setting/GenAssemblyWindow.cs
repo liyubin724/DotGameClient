@@ -10,7 +10,7 @@ namespace DotEditor.Lua.Gen
 {
     public class GenAssemblyWindow : EditorWindow
     {
-        [MenuItem("Game/XLua/1 Gen Assembly Window",priority =1)]
+        [MenuItem("Game/XLua/1 Gen Assembly Setting",priority =1)]
         public static GenAssemblyWindow ShowWin()
         {
             var win = GetWindow<GenAssemblyWindow>();
@@ -21,7 +21,7 @@ namespace DotEditor.Lua.Gen
         
         public Action ClosedCallback { get; set; }
 
-        private GenAssemblyConfig assemblyConfig;
+        private GenAssemblySetting assemblySetting;
         private List<AssemblyData> assemblyDatas = new List<AssemblyData>();
 
         private SearchField searchField = null;
@@ -29,7 +29,7 @@ namespace DotEditor.Lua.Gen
 
         private void OnEnable()
         {
-            assemblyConfig = GenAssemblyConfig.GetConfig();
+            assemblySetting = GenAssemblySetting.GetSetting();
 
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach (var assembly in assemblies)
@@ -100,7 +100,7 @@ namespace DotEditor.Lua.Gen
 
                 if (GUILayout.Button("Clear All", EditorStyles.toolbarButton, GUILayout.Width(80)))
                 {
-                    assemblyConfig.Clear();
+                    assemblySetting.Clear();
                 }
 
                 GUILayout.FlexibleSpace();
@@ -122,13 +122,13 @@ namespace DotEditor.Lua.Gen
                         Rect btnRect = new Rect(rect.x + rect.width - 60, rect.y, 60, rect.height);
                         if (GUI.Button(btnRect, "None",EditorStyles.miniButtonRight))
                         {
-                            assemblyConfig.RemoveAssembly(data.AssemblyName);
+                            assemblySetting.RemoveAssembly(data.AssemblyName);
                         }
 
                         btnRect.x -= btnRect.width;
                         if (GUI.Button(btnRect, "All", EditorStyles.miniButtonLeft))
                         {
-                            assemblyConfig.AddAssembly(data.AssemblyName, data.SpaceList.ToArray());
+                            assemblySetting.AddAssembly(data.AssemblyName, data.SpaceList.ToArray());
                         }
 
                         EGUI.BeginIndent();
@@ -142,17 +142,17 @@ namespace DotEditor.Lua.Gen
                                         continue;
                                     }
 
-                                    bool isChecked = assemblyConfig.HasSpace(data.AssemblyName, ns);
+                                    bool isChecked = assemblySetting.HasSpace(data.AssemblyName, ns);
                                     bool newIsChecked = EditorGUILayout.ToggleLeft(string.IsNullOrEmpty(ns) ? "--None--" : ns, isChecked);
                                     if (isChecked != newIsChecked)
                                     {
                                         if (newIsChecked)
                                         {
-                                            assemblyConfig.AddSpace(data.AssemblyName, ns);
+                                            assemblySetting.AddSpace(data.AssemblyName, ns);
                                         }
                                         else
                                         {
-                                            assemblyConfig.RemoveSpace(data.AssemblyName, ns);
+                                            assemblySetting.RemoveSpace(data.AssemblyName, ns);
                                         }
                                     }
                                 }
@@ -169,7 +169,7 @@ namespace DotEditor.Lua.Gen
 
             if (GUI.changed)
             {
-                EditorUtility.SetDirty(assemblyConfig);
+                EditorUtility.SetDirty(assemblySetting);
             }
         }
 

@@ -25,7 +25,7 @@ namespace DotEditor.Lua.Gen
 
         public GenData()
         {
-            GenAssemblyConfig assemblyConfig = GenAssemblyConfig.GetConfig();
+            GenAssemblySetting assemblyConfig = GenAssemblySetting.GetSetting();
 
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach(var assembly in assemblies)

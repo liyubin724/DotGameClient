@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DotEditor.Lua.Gen
 {
-    public class GenAssemblyConfig : ScriptableObject
+    public class GenAssemblySetting : ScriptableObject
     {
         public List<GenAssemblyData> datas = new List<GenAssemblyData>();
 
@@ -92,12 +92,12 @@ namespace DotEditor.Lua.Gen
         }
 
         private static string CONFIG_ASSET_PATH = "Assets/XLua/gen_assembly_config.asset";
-        public static GenAssemblyConfig GetConfig(bool createIfNotExist = true)
+        public static GenAssemblySetting GetSetting(bool createIfNotExist = true)
         {
-            GenAssemblyConfig genConfig = AssetDatabase.LoadAssetAtPath<GenAssemblyConfig>(CONFIG_ASSET_PATH);
+            GenAssemblySetting genConfig = AssetDatabase.LoadAssetAtPath<GenAssemblySetting>(CONFIG_ASSET_PATH);
             if (genConfig == null && createIfNotExist)
             {
-                genConfig = ScriptableObject.CreateInstance<GenAssemblyConfig>();
+                genConfig = ScriptableObject.CreateInstance<GenAssemblySetting>();
                 AssetDatabase.CreateAsset(genConfig, CONFIG_ASSET_PATH);
                 AssetDatabase.ImportAsset(CONFIG_ASSET_PATH);
             }
