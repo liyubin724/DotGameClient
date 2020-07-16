@@ -112,22 +112,6 @@ namespace DotEditor.Lua.Register
         }
     }
 
-    public class ObjectArrayDataDrawer
-    {
-        private ObjectArrayData data;
-        public ObjectArrayData Data { get => data; }
-
-        public ObjectArrayDataDrawer(ObjectArrayData data)
-        {
-            this.data = data;
-        }
-
-        public void OnGUI(Rect rect)
-        {
-
-        }
-    }
-
     public class RegisterObjectDataDrawer
     {
         private RegisterObjectData objectData = null;
