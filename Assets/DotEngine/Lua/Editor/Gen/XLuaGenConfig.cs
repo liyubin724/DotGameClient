@@ -25,7 +25,7 @@ namespace DotEditor.Lua.Gen
             get
             {
                 List<Type> callTypes = new List<Type>();
-                LuaGenConfig genConfig = LuaGenConfig.GetConfig(false);
+                GenConfig genConfig = GenConfig.GetConfig(false);
                 if (genConfig != null)
                 {
                     foreach(var typeFullName in genConfig.callCSharpTypeNames)
@@ -82,7 +82,7 @@ namespace DotEditor.Lua.Gen
             get
             {
                 List<Type> callTypes = new List<Type>();
-                LuaGenConfig genConfig = LuaGenConfig.GetConfig(false);
+                GenConfig genConfig = GenConfig.GetConfig(false);
                 if (genConfig != null)
                 {
                     foreach (var typeFullName in genConfig.callLuaTypeNames)
@@ -121,7 +121,7 @@ namespace DotEditor.Lua.Gen
             get
             {
                 List<Type> callTypes = new List<Type>();
-                LuaGenConfig genConfig = LuaGenConfig.GetConfig(false);
+                GenConfig genConfig = GenConfig.GetConfig(false);
                 if (genConfig != null)
                 {
                     foreach (var typeFullName in genConfig.optimizeTypeNames)
@@ -140,7 +140,7 @@ namespace DotEditor.Lua.Gen
             get
             {
                 List<List<string>> result = new List<List<string>>();
-                LuaGenConfig genConfig = LuaGenConfig.GetConfig(false);
+                GenConfig genConfig = GenConfig.GetConfig(false);
                 if(genConfig != null)
                 {
                     foreach (var blackStr in genConfig.blackDatas)

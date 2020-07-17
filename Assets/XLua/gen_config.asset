@@ -9,16 +9,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b45cfc2fba830d45ad8a094dedc7598, type: 3}
+  m_Script: {fileID: 11500000, guid: 54c7eb7603b93e34b8f937a88cacd716, type: 3}
   m_Name: gen_config
   m_EditorClassIdentifier: 
+  AssemblyNames:
+  - UnityEngine
+  - UnityEngine.CoreModule
+  - UnityEngine.UI
+  - DotEngine.UI
+  - DotEngine
+  - DotEngine.Context
+  - DotEngine.Framework
+  - DotEngine.Log
   callCSharpTypeNames:
-  - UnityEngine.AI.NavMesh
-  - UnityEngine.AI.NavMesh+OnNavMeshPreUpdate
-  - UnityEngine.AI.NavMeshAgent
-  - UnityEngine.AI.NavMeshBuildDebugSettings
+  - DotEngine.Entity.Avatar.AvatarPartType
+  - DotEngine.UI.UIAtlasImageAnimation+AnimationPlayMode
+  - UnityEngine.GameObject
+  - UnityEngine.Vector2
   callLuaTypeNames: []
-  optimizeTypeNames: []
+  optimizeTypeNames:
+  - UnityEngine.Vector2
   callCSharpGenericTypeNames: []
   callLuaGenericTypeNames: []
   blackDatas: []

@@ -2,20 +2,21 @@
 
 namespace DotEngine.UI
 {
+    public enum UIAtlasImageAnimationMode
+    {
+        Once,
+        Loop,
+        Pingpong,
+    }
+
     [AddComponentMenu("UI/Atlas Image Animation", 13)]
     [ExecuteInEditMode]
     public class UIAtlasImageAnimation : UIAtlasImage
-    {
-        public enum AnimationPlayMode
-        {
-            Once,
-            Loop,
-            Pingpong,
-        }
+    {   
         public bool isSetNativeSize = false;
         public int frameRate = 8;
         public bool autoPlayOnAwake = true;
-        public AnimationPlayMode playMode = AnimationPlayMode.Loop;
+        public UIAtlasImageAnimationMode playMode = UIAtlasImageAnimationMode.Loop;
         public string spriteNamePrefix = "";
         public int spriteIndex = 0;
         public int spriteStartIndex = 0;
@@ -47,7 +48,7 @@ namespace DotEngine.UI
                 elapseTime += Time.deltaTime;
                 if (elapseTime >= frameTime)
                 {
-                    if (playMode == AnimationPlayMode.Once)
+                    if (playMode == UIAtlasImageAnimationMode.Once)
                     {
                         ++spriteIndex;
                         if (spriteIndex == spriteEndIndex)
@@ -55,7 +56,7 @@ namespace DotEngine.UI
                             isPlaying = false;
                         }
                     }
-                    else if (playMode == AnimationPlayMode.Loop)
+                    else if (playMode == UIAtlasImageAnimationMode.Loop)
                     {
                         ++spriteIndex;
                         if (spriteIndex > spriteEndIndex)
@@ -63,7 +64,7 @@ namespace DotEngine.UI
                             spriteIndex = spriteStartIndex;
                         }
                     }
-                    else if (playMode == AnimationPlayMode.Pingpong)
+                    else if (playMode == UIAtlasImageAnimationMode.Pingpong)
                     {
                         if (isForward)
                         {

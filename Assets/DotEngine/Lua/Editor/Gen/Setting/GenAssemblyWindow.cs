@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
-using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 namespace DotEditor.Lua.Gen
@@ -21,147 +20,51 @@ namespace DotEditor.Lua.Gen
         
         public Action ClosedCallback { get; set; }
 
-        private GenAssemblySetting assemblySetting;
-        private List<AssemblyData> assemblyDatas = new List<AssemblyData>();
-
-        private SearchField searchField = null;
-        private string searchText = string.Empty;
-
+        private GenConfig genConfig = null;
+        private List<string> allAssemblyNames = new List<string>();
         private void OnEnable()
         {
-            assemblySetting = GenAssemblySetting.GetSetting();
+            genConfig = GenConfig.GetConfig();
 
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach (var assembly in assemblies)
             {
                 string name = assembly.GetName().Name;
-                if(name.IndexOf("Editor")>=0)
+                if (name.IndexOf("Editor") >= 0)
                 {
                     continue;
                 }
-                AssemblyData data = new AssemblyData()
-                {
-                    AssemblyName = name,
-                };
-                foreach (var type in assembly.GetTypes())
-                {
-                    string ns = type.Namespace;
-                    if (string.IsNullOrEmpty(ns))
-                    {
-                        ns = string.Empty;
-                    }
-                    if (!data.SpaceList.Contains(ns))
-                    {
-                        data.SpaceList.Add(ns);
-                    }
-                }
 
-                if (data.SpaceList.Count > 0)
-                {
-                    data.SpaceList.Sort((item1, item2) =>
-                    {
-                        return item1.CompareTo(item2);
-                    });
-                }
-
-                assemblyDatas.Add(data);
+                allAssemblyNames.Add(name);
             }
-            assemblyDatas.Sort((item1, item2) =>
+
+            allAssemblyNames.Sort((item1, item2) =>
             {
-                return item1.AssemblyName.CompareTo(item2.AssemblyName);
+                return item1.CompareTo(item2);
             });
         }
 
         private Vector2 scrollPos = Vector2.zero;
         private void OnGUI()
         {
-            if (searchField == null)
-            {
-                searchField = new SearchField();
-                searchField.autoSetFocusOnFindCommand = true;
-            }
-
-            EditorGUILayout.BeginHorizontal(EditorStyles.toolbar);
-            {
-                if(GUILayout.Button("Collapse",EditorStyles.toolbarButton,GUILayout.Width(80)))
-                {
-                    assemblyDatas.ForEach((d) =>
-                    {
-                        d.isFoldout = false;
-                    });
-                }
-                if (GUILayout.Button("Expand", EditorStyles.toolbarButton, GUILayout.Width(80)))
-                {
-                    assemblyDatas.ForEach((d) =>
-                    {
-                        d.isFoldout = true;
-                    });
-                }
-
-                if (GUILayout.Button("Clear All", EditorStyles.toolbarButton, GUILayout.Width(80)))
-                {
-                    assemblySetting.Clear();
-                }
-
-                GUILayout.FlexibleSpace();
-
-                searchText = searchField.OnToolbarGUI(searchText);
-            }
-            EditorGUILayout.EndHorizontal();
-
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos, EditorStyles.helpBox);
             {
-                foreach (var data in assemblyDatas)
+                foreach (var name in allAssemblyNames)
                 {
-                    EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+                    Rect rect = GUILayoutUtility.GetRect(new GUIContent(name), EGUIStyles.BoxedHeaderStyle, GUILayout.ExpandWidth(true));
+                    EditorGUI.LabelField(rect, GUIContent.none, EGUIStyles.BoxedHeaderStyle);
+                    bool isSelected = genConfig.AssemblyNames.IndexOf(name) >= 0;
+                    bool tempIsSelected = EditorGUI.ToggleLeft(rect, name, isSelected);
+                    if(tempIsSelected!=isSelected)
                     {
-                        Rect rect = GUILayoutUtility.GetRect(new GUIContent(data.AssemblyName), EditorStyles.foldout, GUILayout.ExpandWidth(true));
-                        Rect foldoutRect = new Rect(rect.x, rect.y, rect.width - 150, rect.height);
-                        data.isFoldout = EditorGUI.Foldout(foldoutRect, data.isFoldout, data.AssemblyName, true);
-
-                        Rect btnRect = new Rect(rect.x + rect.width - 60, rect.y, 60, rect.height);
-                        if (GUI.Button(btnRect, "None",EditorStyles.miniButtonRight))
+                        if(tempIsSelected)
                         {
-                            assemblySetting.RemoveAssembly(data.AssemblyName);
-                        }
-
-                        btnRect.x -= btnRect.width;
-                        if (GUI.Button(btnRect, "All", EditorStyles.miniButtonLeft))
+                            genConfig.AssemblyNames.Add(name);
+                        }else
                         {
-                            assemblySetting.AddAssembly(data.AssemblyName, data.SpaceList.ToArray());
+                            genConfig.AssemblyNames.Remove(name);
                         }
-
-                        EGUI.BeginIndent();
-                        {
-                            if (data.isFoldout || !string.IsNullOrEmpty(searchText))
-                            {
-                                foreach (var ns in data.SpaceList)
-                                {
-                                    if (!string.IsNullOrEmpty(searchText) && ns.ToLower().IndexOf(searchText.ToLower()) < 0)
-                                    {
-                                        continue;
-                                    }
-
-                                    bool isChecked = assemblySetting.HasSpace(data.AssemblyName, ns);
-                                    bool newIsChecked = EditorGUILayout.ToggleLeft(string.IsNullOrEmpty(ns) ? "--None--" : ns, isChecked);
-                                    if (isChecked != newIsChecked)
-                                    {
-                                        if (newIsChecked)
-                                        {
-                                            assemblySetting.AddSpace(data.AssemblyName, ns);
-                                        }
-                                        else
-                                        {
-                                            assemblySetting.RemoveSpace(data.AssemblyName, ns);
-                                        }
-                                    }
-                                }
-                            }
-
-                        }
-                        EGUI.EndIndent();
                     }
-                    EditorGUILayout.EndVertical();
                 }
             }
             EditorGUILayout.EndScrollView();
@@ -169,7 +72,7 @@ namespace DotEditor.Lua.Gen
 
             if (GUI.changed)
             {
-                EditorUtility.SetDirty(assemblySetting);
+                EditorUtility.SetDirty(genConfig);
             }
         }
 
@@ -184,13 +87,6 @@ namespace DotEditor.Lua.Gen
             {
                 Close();
             }
-        }
-
-        class AssemblyData
-        {
-            public string AssemblyName;
-            public bool isFoldout = false;
-            public List<string> SpaceList = new List<string>();
         }
     }
 }
