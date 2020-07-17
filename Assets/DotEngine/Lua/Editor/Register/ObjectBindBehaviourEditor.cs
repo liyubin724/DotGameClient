@@ -9,9 +9,13 @@ namespace DotEditor.Lua.Register
     [CustomEditor(typeof(ObjectBindBehaviour))]
     public class ObjectBindBehaviourEditor : ScriptBindBehaviourEditor
     {
+        ObjectBindBehaviour bindBehaviour = null;
+        NativeDrawerObject objectDataDrawer = null;
         protected override void OnEnable()
         {
             base.OnEnable();
+            bindBehaviour = target as ObjectBindBehaviour;
+            objectDataDrawer = new NativeDrawerObject(bindBehaviour.registerObjectData);
         }
 
         public override void OnInspectorGUI()
@@ -19,8 +23,9 @@ namespace DotEditor.Lua.Register
             base.OnInspectorGUI();
             
             EGUILayout.DrawHorizontalLine();
+            objectDataDrawer.OnGUILayout();
 
-            if(GUI.changed)
+            if (GUI.changed)
             {
                 EditorUtility.SetDirty(target);
             }
