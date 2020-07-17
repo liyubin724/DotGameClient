@@ -9,6 +9,8 @@ namespace DotEngine.Lua
     {
         public const string NAME = "LuaService";
 
+        public const string GLOBAL_MGR_NAME = "EnvMgr";
+
         public float TickInterval { get; set; } = 0;
 
         private float elapsedTime = 0.0f;
@@ -54,6 +56,7 @@ namespace DotEngine.Lua
             }
 
             LuaEnv luaEnv = new LuaEnv();
+
             FileScriptLoader scriptLoader = new FileScriptLoader(pathFormats);
             LuaEnvData envData = new LuaEnvData(luaEnv, scriptLoader);
             envDic.Add(envName, envData);
@@ -78,7 +81,9 @@ namespace DotEngine.Lua
                     LogUtil.LogError(LuaConst.LOGGER_NAME, "LuaEnvService::CreateEnv->Load mgr Failed.mgrScriptPath = "+mgrScriptPath);
                 }else
                 {
-                    envData.SetMgr(LuaUtility.Instance(luaEnv, mgrScriptPath));
+                    envData.SetMgr(mgrTable);
+
+                    luaEnv.Global.Set(GLOBAL_MGR_NAME, mgrTable);
                 }
             }
         }

@@ -40,5 +40,13 @@ namespace DotEngine.Lua
             return scriptAssetPath.Replace("\\","/").Replace(SCRIPT_ASSET_DIR, "").Replace(SCRIPT_EXTENSION,"");
         }
 
+        public static string GetScriptPathFormat()
+        {
+#if UNITY_EDITOR
+            return $"{Application.dataPath}/{SCRIPT_DIR}{{0}}{SCRIPT_EXTENSION}";
+#else
+
+#endif
+        }
     }
 }

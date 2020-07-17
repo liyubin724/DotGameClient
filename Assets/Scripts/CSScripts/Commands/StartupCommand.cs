@@ -1,4 +1,6 @@
 ﻿using DotEngine.Framework;
+using DotEngine.Lua;
+using UnityEngine;
 
 namespace Game.Commands
 {
@@ -6,7 +8,12 @@ namespace Game.Commands
     {
         public override void Execute(INotification notification)
         {
-            
+            LuaEnvService luaEnvService = GameFacade.GetInstance().RetrieveService<LuaEnvService>(LuaEnvService.NAME);
+
+            luaEnvService.CreateEnv("game", 
+                new string[] { LuaConst.GetScriptPathFormat() }, 
+                new string[] { "DotLua/Startup"},
+                "Game/GameEnvManager");
         }
     }
 }

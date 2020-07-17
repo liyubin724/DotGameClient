@@ -23,9 +23,12 @@ MonoBehaviour:
   - UnityEngine.CoreModule
   callCSharpTypeNames:
   - UnityEngine.Vector2
+  - DotEngine.Log.LogUtil
   callLuaTypeNames: []
   optimizeTypeNames:
   - UnityEngine.Vector2
   callCSharpGenericTypeNames: []
-  callLuaGenericTypeNames: []
+  callLuaGenericTypeNames:
+  - System.Action`2@XLua.LuaTable@System.Single
+  - System.Action`1@XLua.LuaTable
   blackDatas: []

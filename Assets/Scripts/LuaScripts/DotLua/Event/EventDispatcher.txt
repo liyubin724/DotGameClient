@@ -1,0 +1,89 @@
+require("DotLua/Event/EventID")
+require("DotLua/Event/EventData")
+require("DotLua/Utility/TableUtil")
+
+----public----
+--消息机制
+EventDispatcher =
+    Class(
+    function(self)
+        self.events = {}
+    end
+)
+
+----public----
+--
+--@param eventID:Int值类型
+--@param eventData:EventData对象
+function EventDispatcher:Register(eventID, eventData)
+    if eventData then
+        local eventList = self.events[eventID]
+        if not eventList then
+            eventList = {}
+            self.events[eventID] = eventList
+        end
+
+        table.insert(eventList, eventData)
+    else
+        Dot.DebugLog:LogWarning("LuaEventDispatcher::Register->data is Nil")
+    end
+end
+
+----public----
+--
+--@param eventID
+--@param ...
+function EventDispatcher:Trigger(eventID, ...)
+    local eventList = self.events[eventID]
+    if eventList then
+        for i = #(eventList),1,-1 do
+            local eventData = eventList[i]
+
+            eventData:Invoke(...)
+
+            if eventData:IsOnce() then
+                table.remove(eventList, i)
+            end
+        end
+    end
+end
+
+----public----
+--
+--@param eventID
+--@param eventData
+function EventDispatcher:Unregister(eventID, eventData)
+    if eventData then
+        local eventList = self.events[eventID]
+        if eventList then
+            for i = #(eventList), 1, -1 do
+                if eventList[i]:Equal(eventData) then
+                    table.remove(eventList, i)
+                end
+            end
+        end
+    else
+        Dot.DebugLog:LogWarning("EventDispatcher::Unregister->eventData is Nil")
+    end
+end
+
+----public----
+--
+--@param eventID
+function EventDispatcher:UnregisterAll(eventID)
+    local eventList = self.events[eventID]
+    if eventList then
+        table.clear(eventList)
+    end
+end
+
+----public----
+--
+function EventDispatcher:Clear()
+    for index = 1, #self.events do
+        local eventList = self.events[index]
+        if eventList then
+            table.clear(eventList)
+        end
+    end
+end

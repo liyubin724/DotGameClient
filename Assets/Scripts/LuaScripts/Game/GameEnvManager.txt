@@ -1,0 +1,16 @@
+require('DotLua/EnvManager')
+
+GameEnvManager =
+    Class(
+    EnvManager,
+    function(self)
+    end
+)
+
+function GameEnvManager:DoStart()
+    self._base.DoStart(self)
+end
+
+function GameEnvManager:DoUpdate(deltaTime)
+    self._base.DoUpdate(self, deltaTime)
+end

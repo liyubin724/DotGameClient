@@ -1,0 +1,11 @@
+EnvManager = Class(function(self)
+
+end)
+
+function EnvManager:DoStart()
+
+end
+
+function EnvManager:DoUpdate()
+
+end
