@@ -9,6 +9,8 @@ GameEnvManager =
 
 function GameEnvManager:DoStart()
     self._base.DoStart(self)
+
+    DebugLog.Info("Test", "GameEnv DoStart")
 end
 
 function GameEnvManager:DoUpdate(deltaTime)

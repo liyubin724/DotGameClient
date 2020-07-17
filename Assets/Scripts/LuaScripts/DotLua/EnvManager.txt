@@ -1,11 +1,19 @@
-EnvManager = Class(function(self)
+EnvManager =
+    Class(
+    function(self)
 
-end)
+    end
+)
+
+function EnvManager:GetEventMgr()
+    return self.EventMgr
+end
 
 function EnvManager:DoStart()
+    self.EventMgr = EventDispatcher()
 
+    DebugLog.Info("Test", "BaseEnv DoStart")
 end
 
 function EnvManager:DoUpdate()
-
 end

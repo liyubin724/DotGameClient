@@ -1,4 +1,4 @@
-----public----
+----internal----
 --构造函数
 --@param receiver 接收事件的table，可为空
 --@param func 接收事件处理的处理函数
@@ -14,28 +14,28 @@ EventData =
     end
 )
 
-----public----
+----internal----
 --返回接收者
 --@return
 function EventData:GetReceiver()
     return self.receiver
 end
 
-----public----
+----internal----
 --返回接收函数
 --@return
 function EventData:GetFunc()
     return self.func
 end
 
-----public----
+----internal----
 --是否只触发一次
 --@return
 function EventData:IsOnce()
     return self.isOnce
 end
 
-----public----
+----internal----
 --获取携带数据
 ---- @return
 function EventData:GetData()
@@ -61,11 +61,11 @@ function EventData:Invoke(...)
             end
         end
     else
-        Dot.DebugLog:LogError('EventData::Invoke->func is nil')
+        DebugLog.LogError("Event",'EventData::Invoke->func is nil')
     end
 end
 
-----public----
+----internal----
 --比较是否相同
 --相同的两种情况：
 --1：两个对象是同一对象
