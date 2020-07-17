@@ -13,25 +13,19 @@ MonoBehaviour:
   m_Name: gen_config
   m_EditorClassIdentifier: 
   AssemblyNames:
-  - UnityEngine
-  - UnityEngine.CoreModule
-  - UnityEngine.UI
-  - DotEngine.UI
+  - Assembly-CSharp
   - DotEngine
   - DotEngine.Context
   - DotEngine.Framework
   - DotEngine.Log
+  - DotEngine.UI
+  - UnityEngine
+  - UnityEngine.CoreModule
   callCSharpTypeNames:
-  - DotEngine.Entity.Avatar.AvatarPartType
-  - DotEngine.UI.UIAtlasImageAnimation+AnimationPlayMode
-  - UnityEngine.GameObject
   - UnityEngine.Vector2
   callLuaTypeNames: []
   optimizeTypeNames:
   - UnityEngine.Vector2
-  callCSharpGenericTypeNames:
-  - System.Collections.Generic.List`1@System.Int32
-  - 
-  callLuaGenericTypeNames:
-  - 
+  callCSharpGenericTypeNames: []
+  callLuaGenericTypeNames: []
   blackDatas: []

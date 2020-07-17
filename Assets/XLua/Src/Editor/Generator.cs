@@ -1315,15 +1315,21 @@ namespace CSObjectWrapEditor
             {
                 var flag = (attr as GCOptimizeAttribute).Flag;
 #endif
-                if (obj is Type)
+                if (obj is Type objType)
                 {
-                    OptimizeCfg.Add(obj as Type, flag);
+                    if(!OptimizeCfg.ContainsKey(objType))
+                    {
+                        OptimizeCfg.Add(obj as Type, flag);
+                    }
                 }
                 else if (obj is IEnumerable<Type>)
                 {
                     foreach(var type in (obj as IEnumerable<Type>))
                     {
-                        OptimizeCfg.Add(type, flag);
+                        if(!OptimizeCfg.ContainsKey(type))
+                        {
+                            OptimizeCfg.Add(type, flag);
+                        }
                     }
                 }
             }
