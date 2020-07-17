@@ -29,6 +29,9 @@ MonoBehaviour:
   callLuaTypeNames: []
   optimizeTypeNames:
   - UnityEngine.Vector2
-  callCSharpGenericTypeNames: []
-  callLuaGenericTypeNames: []
+  callCSharpGenericTypeNames:
+  - System.Collections.Generic.List`1@System.Int32
+  - 
+  callLuaGenericTypeNames:
+  - 
   blackDatas: []

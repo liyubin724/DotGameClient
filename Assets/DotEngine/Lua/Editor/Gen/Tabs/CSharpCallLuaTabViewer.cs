@@ -1,4 +1,6 @@
 ﻿using DotEditor.GUIExtension;
+using DotEngine.Utilities;
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditorInternal;
@@ -27,8 +29,57 @@ namespace DotEditor.Lua.Gen
                 };
                 genericTypeRL.drawElementCallback = (r, index, isActive, isFocuse) =>
                 {
-                    Rect typeNameRect = new Rect(r.x, r.y, r.width - r.height, r.height);
+                    Rect typeNameRect = new Rect(r.x, r.y, r.width - 60, r.height);
                     genConfig.callLuaGenericTypeNames[index] = EditorGUI.TextField(typeNameRect, genConfig.callLuaGenericTypeNames[index]);
+
+                    Rect btnRect = new Rect(r.x + r.width - 60, r.y, 60, r.height);
+                    if (GUI.Button(btnRect, "Check"))
+                    {
+                        string typeName = genConfig.callLuaGenericTypeNames[index];
+                        bool isValid = true;
+                        string errorMsg = string.Empty;
+
+                        if (string.IsNullOrEmpty(typeName))
+                        {
+                            isValid = false;
+                            errorMsg = "Name is empty";
+                        }
+                        else
+                        {
+                            string[] splitStr = typeName.Split(new char[] { '@' }, StringSplitOptions.RemoveEmptyEntries);
+                            if (splitStr == null || splitStr.Length == 0)
+                            {
+                                isValid = false;
+                                errorMsg = "The format of Name is Error";
+                            }
+                            else if (splitStr.Length <= 1)
+                            {
+                                isValid = false;
+                                errorMsg = "The lenght of name is less than 2";
+                            }
+                            else
+                            {
+                                string gName = splitStr[0];
+                                string[] pNames = new string[splitStr.Length - 1];
+                                Array.Copy(splitStr, 1, pNames, 0, pNames.Length);
+                                Type t = AssemblyUtility.GetGenericType(gName, pNames);
+                                if (t == null)
+                                {
+                                    isValid = false;
+                                    errorMsg = "Convert Failed";
+                                }
+                            }
+                        }
+
+                        if (!isValid)
+                        {
+                            EditorUtility.DisplayDialog("Failed", errorMsg, "OK");
+                        }
+                        else
+                        {
+                            EditorUtility.DisplayDialog("Success", "Success", "OK");
+                        }
+                    }
                 };
                 genericTypeRL.onAddCallback = (list) =>
                 {
