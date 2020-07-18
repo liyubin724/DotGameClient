@@ -4,10 +4,10 @@ using SuperScrollView;
 using UnityEngine;
 using XLua;
 
-namespace DotEngine.Lua.ListView
+namespace DotEngine.Lua.UI.ListView
 {
     [RequireComponent(typeof(LoopListViewItem2))]
-    public class LuaListViewItem : LoopListViewItem2
+    public class LuaUIListViewItem : LoopListViewItem2
     {
         private const string ITEM_NAME = "viewItem";
 

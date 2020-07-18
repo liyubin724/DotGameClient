@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using XLua;
 
-namespace DotEngine.Lua.ListView
+namespace DotEngine.Lua.UI.ListView
 {
     [RequireComponent(typeof(ScrollRect))]
-    public class LuaListView : LoopListView2
+    public class LuaUIListView : LoopListView2
     {
         private const string CONTROLLER_NAME = "view";
         private const string GET_ITEM_FUNC_NAME = "GetItemName";
@@ -54,7 +54,7 @@ namespace DotEngine.Lua.ListView
             }
 
             LoopListViewItem2 item = listView.NewListViewItem(itemName);
-            if(item is LuaListViewItem viewItem)
+            if(item is LuaUIListViewItem viewItem)
             {
                 bindScript.CallAction<int, LuaTable>(SET_DATA_FUNC_NAME, index, viewItem.ObjTable);
             }

@@ -96,6 +96,13 @@ namespace DotEditor.UI
             return go;
         }
 
+        public static GameObject CreateRawImage(Resources resources)
+        {
+            GameObject go = CreateUIElementRoot("RawImage", s_ImageElementSize);
+            go.AddComponent<UIRawImage>();
+            return go;
+        }
+
         public static GameObject CreateBitmapText(Resources resources)
         {
             GameObject go = CreateUIElementRoot("BitmapText", s_ImageElementSize);

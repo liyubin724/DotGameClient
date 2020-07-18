@@ -48,7 +48,14 @@ namespace DotEditor.UI
             PlaceUIElementRoot(go, menuCommand);
         }
 
-        [MenuItem("GameObject/UI/DotEngine.UI/Bitmap Text", false, 1002)]
+        [MenuItem("GameObject/UI/DotEngine.UI/Raw Image", false, 1003)]
+        static public void AddRawImage(MenuCommand menuCommand)
+        {
+            GameObject go = UIExtensionDefaultControls.CreateRawImage(GetStandardResources());
+            PlaceUIElementRoot(go, menuCommand);
+        }
+
+        [MenuItem("GameObject/UI/DotEngine.UI/Bitmap Text", false, 1004)]
         static public void AddBitmapText(MenuCommand menuCommand)
         {
             GameObject go = UIExtensionDefaultControls.CreateBitmapText(GetStandardResources());
