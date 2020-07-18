@@ -4,7 +4,7 @@ using SuperScrollView;
 using UnityEngine;
 using XLua;
 
-namespace Assets.DotEngine.Lua.ListView
+namespace DotEngine.Lua.ListView
 {
     [RequireComponent(typeof(LoopListViewItem2))]
     public class LuaListViewItem : LoopListViewItem2

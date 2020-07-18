@@ -23,5 +23,5 @@ MonoBehaviour:
     labels: []
   filters:
   - assetFolder: Assets/ArtRes/Fonts/BMFonts
-    isIncludeSubfolder: 1
+    isIncludeSubfolder: 0
     fileRegex: ^\w*(.asset|.png)$

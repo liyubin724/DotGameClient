@@ -1,0 +1,1107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1938263947, guid: 696d4dd225d9e154daf5104de6fc7b87, type: 3}
+  m_Name: asset_address_config
+  m_EditorClassIdentifier: 
+  addressDatas:
+  - assetAddress: achievement_bar
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/achievement_bar.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/achievement_bar_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: achievement_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/achievement_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/achievement_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: achievement_zong
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/achievement_zong.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/achievement_zong_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: activecode_patern1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/activecode_patern1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/activecode_patern1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: activecode_patern2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/activecode_patern2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/activecode_patern2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: activity_patern1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/activity_patern1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/activity_patern1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: activity_patern2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/activity_patern2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/activity_patern2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: activity_patern3
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/activity_patern3.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/activity_patern3_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: activity_patern4
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/activity_patern4.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/activity_patern4_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: Back_Normal
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/Back_Normal.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/back_normal_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: back_skillpower
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/back_skillpower.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/back_skillpower_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: back_slider
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/back_slider.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/back_slider_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: back_sword
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/back_sword.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/back_sword_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_blood
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_blood.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_blood_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_drawpet
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_drawpet.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_drawpet_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_equipresolve
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_equipresolve.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_equipresolve_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_equipstrength
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_equipstrength.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_equipstrength_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_jinjiedi
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_jinjiedi.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_jinjiedi_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_light
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_light.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_light_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_moon
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_moon.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_moon_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_npcbubble
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_npcbubble.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_npcbubble_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_shizhuangdi
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_shizhuangdi.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_shizhuangdi_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_skill
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_skill.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_skill_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_sword
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_sword.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_sword_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_tanchuang1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_tanchuang1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_tanchuang1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg_xiulian
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/bg_xiulian.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bg_xiulian_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: BOSSshot_patern
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/BOSSshot_patern.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/bossshot_patern_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: button_lan
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/button_lan.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/button_lan_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: button_zi
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/button_zi.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/button_zi_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: chat_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/chat_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/chat_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: chat_wen5
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/chat_wen5.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/chat_wen5_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: chibang
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/chibang.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/chibang_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: chibang2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/chibang2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/chibang2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: closeup_pet
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/closeup_pet.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/closeup_pet_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_3
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_3.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_3_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_4
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_4.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_4_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_5
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_5.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_5_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_6
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_6.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_6_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_7
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_7.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_7_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_8
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_8.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_8_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_9
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_9.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_9_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_kai
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_kai.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_kai_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_kaishi
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_kaishi.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_kaishi_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: daojishi_shi
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/daojishi_shi.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/daojishi_shi_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: dibang
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/dibang.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/dibang_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: dongtianfudi_match
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/dongtianfudi_match.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/dongtianfudi_match_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: dongtianfudi_sitelight
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/dongtianfudi_sitelight.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/dongtianfudi_sitelight_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: dongtianfudi_vs
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/dongtianfudi_vs.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/dongtianfudi_vs_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: everydaybg1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/everydaybg1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/everydaybg1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: everydaywenzi
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/everydaywenzi.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/everydaywenzi_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: everydayxxd
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/everydayxxd.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/everydayxxd_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: frame_cloth
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/frame_cloth.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/frame_cloth_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: function_trailer_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/function_trailer_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/function_trailer_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: gem_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/gem_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/gem_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: get_new_bg2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/get_new_bg2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/get_new_bg2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: get_new_fabao
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/get_new_fabao.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/get_new_fabao_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: get_new_pet
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/get_new_pet.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/get_new_pet_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: get_new_shenbing
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/get_new_shenbing.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/get_new_shenbing_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: get_new_wing
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/get_new_wing.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/get_new_wing_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guaji_pic
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guaji_pic.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guaji_pic_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guide_hand
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guide_hand.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guide_hand_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_boss
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_boss.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_boss_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_boss_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_boss_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_boss_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_citan
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_citan.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_citan_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_cloud
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_cloud.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_cloud_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_patern_donate1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_patern_donate1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_patern_donate1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_patern_donate2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_patern_donate2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_patern_donate2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_patern_donate3
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_patern_donate3.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_patern_donate3_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_sign_patern1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_sign_patern1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_sign_patern1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_sign_patern2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_sign_patern2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_sign_patern2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_sign_patern3
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_sign_patern3.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_sign_patern3_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: guild_skill_study
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/guild_skill_study.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/guild_skill_study_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: horn_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/horn_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/horn_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: logo_white
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/logo_white.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/logo_white_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_cloud
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/map_cloud.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/map_cloud_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: newfunction_paterncharacter
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/newfunction_paterncharacter.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/newfunction_paterncharacter_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: online1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/online1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/online1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_bg1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_bg1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_bg1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern10
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern10.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern10_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern11
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern11.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern11_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern12
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern12.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern12_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern13
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern13.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern13_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern5
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern5.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern5_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern6
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern6.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern6_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern7
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern7.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern7_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern8
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern8.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern8_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: operator_activity_pattern9
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/operator_activity_pattern9.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/operator_activity_pattern9_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: PetChoose_back
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/PetChoose_back.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/petchoose_back_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: PetChoose_BackPet
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/PetChoose_BackPet.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/petchoose_backpet_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: PetChoose_DivingLine
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/PetChoose_DivingLine.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/petchoose_divingline_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: PetChoose_PaternBack
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/PetChoose_PaternBack.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/petchoose_paternback_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_bg_1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_bg_1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_bg_1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_bg_2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_bg_2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_bg_2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_goal_star1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_goal_star1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_goal_star1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_goal_star2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_goal_star2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_goal_star2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_goal_star3
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_goal_star3.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_goal_star3_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_show_left
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_show_left.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_show_left_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_show_left_xing
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_show_left_xing.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_show_left_xing_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_zhenfa_di
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_zhenfa_di.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_zhenfa_di_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_zhenfa_di2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_zhenfa_di2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_zhenfa_di2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pet_zhenfa_di3
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pet_zhenfa_di3.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pet_zhenfa_di3_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pvp_baiyin
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pvp_baiyin.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pvp_baiyin_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pvp_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pvp_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pvp_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pvp_bojin
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pvp_bojin.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pvp_bojin_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pvp_dashi
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pvp_dashi.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pvp_dashi_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pvp_qingtong
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pvp_qingtong.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pvp_qingtong_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: pvp_zuanshi
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/pvp_zuanshi.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/pvp_zuanshi_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: result_
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/result_.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/result__png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: result_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/result_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/result_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: result_chenggong
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/result_chenggong.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/result_chenggong_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: result_shibai
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/result_shibai.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/result_shibai_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: satr
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/satr.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/satr_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: Sceneshot_bg2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/Sceneshot_bg2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/sceneshot_bg2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: Sceneshot_patern1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/Sceneshot_patern1.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/sceneshot_patern1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: Sceneshot_patern2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/Sceneshot_patern2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/sceneshot_patern2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: Sceneshot_titlepatern2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/Sceneshot_titlepatern2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/sceneshot_titlepatern2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: server_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/server_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/server_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: server_bg2
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/server_bg2.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/server_bg2_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: server_bg3
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/server_bg3.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/server_bg3_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: server_button
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/server_button.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/server_button_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: shipei
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/shipei.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/shipei_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: Skill_PowerSite
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/Skill_PowerSite.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/skill_powersite_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: sliderjingjie_dark
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/sliderjingjie_dark.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/sliderjingjie_dark_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: sliderjingjie_light
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/sliderjingjie_light.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/sliderjingjie_light_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: star3
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/star3.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/star3_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: success_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/success_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/success_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: team_pipei_di
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/team_pipei_di.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/team_pipei_di_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: tiandao_fashu
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/tiandao_fashu.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/tiandao_fashu_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: tiandao_fuzhu
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/tiandao_fuzhu.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/tiandao_fuzhu_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: tiandao_panel
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/tiandao_panel.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/tiandao_panel_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: tiandao_roudun
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/tiandao_roudun.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/tiandao_roudun_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: tiandao_shuchu
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/tiandao_shuchu.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/tiandao_shuchu_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: tongguan
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/Alpha/tongguan.png
+    bundlePath: assets/artres/ui/bg/highquality/alpha/tongguan_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bg1
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/NoAlpha/bg1.png
+    bundlePath: assets/artres/ui/bg/highquality/noalpha/bg1_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/NoAlpha/map_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/noalpha/map_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: notice
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/NoAlpha/notice.png
+    bundlePath: assets/artres/ui/bg/highquality/noalpha/notice_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: story_bg
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/NoAlpha/story_bg.png
+    bundlePath: assets/artres/ui/bg/highquality/noalpha/story_bg_png
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: worldMap
+    assetPath: Assets/ArtRes/UI/BG/HighQuality/NoAlpha/worldMap.jpg
+    bundlePath: assets/artres/ui/bg/highquality/noalpha/worldmap_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: back_petget
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/back_petget.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/back_petget_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: bantou
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/bantou.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/bantou_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: login_bg1
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/login_bg1.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/login_bg1_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: login_bg2
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/login_bg2.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/login_bg2_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: login_bg3
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/login_bg3.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/login_bg3_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: login_bg4
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/login_bg4.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/login_bg4_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_beishanfudi
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/map_beishanfudi.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/map_beishanfudi_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_huahaimijing
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/map_huahaimijing.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/map_huahaimijing_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_test
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/map_test.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/map_test_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_tianbaoshan
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/map_tianbaoshan.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/map_tianbaoshan_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_wujiangxianfu
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/map_wujiangxianfu.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/map_wujiangxianfu_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_wujianmen
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/map_wujianmen.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/map_wujianmen_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_xuelongshan
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/map_xuelongshan.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/map_xuelongshan_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0
+  - assetAddress: map_yushandahuangze
+    assetPath: Assets/ArtRes/UI/BG/LowQuality/NoAlpha/map_yushandahuangze.jpg
+    bundlePath: assets/artres/ui/bg/lowquality/noalpha/map_yushandahuangze_jpg
+    labels: []
+    isScene: 0
+    isPreload: 0
+    isNeverDestroy: 0

@@ -24,6 +24,10 @@ MonoBehaviour:
   callCSharpTypeNames:
   - UnityEngine.Vector2
   - DotEngine.Log.LogUtil
+  - DotEngine.UI.UIAtlasImage
+  - DotEngine.UI.UIAtlasImageAnimation
+  - DotEngine.UI.UIAtlasImageAnimationMode
+  - DotEngine.UI.UIRawImage
   callLuaTypeNames: []
   optimizeTypeNames:
   - UnityEngine.Vector2

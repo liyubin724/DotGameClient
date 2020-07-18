@@ -1,69 +1,128 @@
-﻿//using UnityEngine;
-//using UnityEngine.UI;
-//using UnityObject = UnityEngine.Object;
+﻿using DotEngine.Asset;
+using DotEngine.Framework;
+using DotEngine.Log;
+using UnityEngine;
+using UnityEngine.UI;
 
-//namespace DotEngine.UI
-//{
-//    public class UIRawImage : RawImage
-//    {
-//        [SerializeField]
-//        private string m_RawImagePath;
-//        public string RawImagePath
-//        {
-//            get
-//            {
-//                return m_RawImagePath;
-//            }
+namespace DotEngine.UI
+{
+    public class UIRawImage : RawImage
+    {
+        [SerializeField]
+        private string m_ImageAddress;
+        public string ImageAddress
+        {
+            get
+            {
+                return m_ImageAddress;
+            }
+            set
+            {
+                if(m_ImageAddress!=value)
+                {
+                    m_ImageAddress = value;
+                    LoadImage();
+                }
+            }
+        }
 
-//            set
-//            {
-//                if (m_RawImagePath != value)
-//                {
-//                    if (loadingIndex >= 0)
-//                    {
-//                        GameAsset.CancelLoad(loadingIndex);
-//                        loadingIndex = -1;
-//                    }
+        [SerializeField]
+        private bool m_IsSetNativeSize = true;
+        public bool IsSetNativeSize
+        {
+            get
+            {
+                return m_IsSetNativeSize;
+            }
+            set
+            {
+                if(m_IsSetNativeSize!=value)
+                {
+                    m_IsSetNativeSize = value;
+                    if(texture!=null)
+                    {
+                        SetNativeSize();
+                    }
+                }
+            }
+        }
 
-//                    m_RawImagePath = value;
-//                    if (string.IsNullOrEmpty(m_RawImagePath))
-//                    {
-//                        texture = null;
-//                    }
-//                    else
-//                    {
-//                        LoadRawImage();
-//                    }
-//                }
-//            }
-//        }
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            LoadImage();
+        }
 
-//        private int loadingIndex = -1;
-//        private void LoadRawImage()
-//        {
-//            if (!string.IsNullOrEmpty(m_RawImagePath))
-//            {
-//                loadingIndex = GameAsset.LoadAssetAsync(m_RawImagePath, OnLoadRawImageFinish);
-//            }
-//        }
+        private AssetHandler assetHandler = null;
+        private void LoadImage()
+        {
+            if(Application.isPlaying)
+            {
+                AssetService assetService = Facade.GetInstance().RetrieveService<AssetService>(AssetService.NAME);
+                if(assetHandler!=null)
+                {
+                    assetService.UnloadAssetAsync(assetHandler);
+                    assetHandler = null;
+                }
+                if(texture !=null && string.IsNullOrEmpty(m_ImageAddress))
+                {
+                    texture = null;
+                }else if(!string.IsNullOrEmpty(m_ImageAddress))
+                {
+                    assetHandler = assetService.LoadAssetAsync(m_ImageAddress, OnLoadComplete);
+                }
+            }
+        }
 
-//        private void OnLoadRawImageFinish(int assetIndex, string assetPath, UnityObject obj)
-//        {
-//            loadingIndex = -1;
-//            if (obj != null)
-//            {
-//                texture = (obj as Texture2D);
-//            }
-//        }
+        private void OnLoadComplete(string address, Object uObj, object userData)
+        {
+            assetHandler = null;
 
-//        protected override void OnDestroy()
-//        {
-//            base.OnDestroy();
-//            if (loadingIndex >= 0)
-//            {
-//                GameAsset.CancelLoad(loadingIndex);
-//                loadingIndex = -1;
-//            }
-//        }
-//    }
-//}
+            Texture2D tex = (Texture2D)uObj;
+            if(tex != null)
+            {
+                texture = tex;
+                if(m_IsSetNativeSize)
+                {
+                    SetNativeSize();
+                }
+            }else
+            {
+                LogUtil.LogError("UIRawImage", "UIRawImage::OnLoadComplete->uObject is null.address = " + address);
+            }
+        }
+
+        protected override void OnPopulateMesh(VertexHelper vh)
+        {
+            if(texture == null)
+            {
+                vh.Clear();
+            }
+            else
+            {
+                base.OnPopulateMesh(vh);
+            }
+        }
+
+        protected override void OnDestroy()
+        {
+            if(assetHandler!=null)
+            {
+                AssetService assetService = Facade.GetInstance().RetrieveService<AssetService>(AssetService.NAME);
+                assetService.UnloadAssetAsync(assetHandler);
+                assetHandler = null;
+            }
+
+            base.OnDestroy();
+        }
+
+#if UNITY_EDITOR
+        protected override void OnValidate()
+        {
+            base.OnValidate();
+            LoadImage();
+        }
+#endif
+    }
+}

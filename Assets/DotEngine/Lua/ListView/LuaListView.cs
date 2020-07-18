@@ -1,5 +1,4 @@
-﻿using Assets.DotEngine.Lua.ListView;
-using DotEngine.Log;
+﻿using DotEngine.Log;
 using SuperScrollView;
 using UnityEngine;
 using UnityEngine.UI;

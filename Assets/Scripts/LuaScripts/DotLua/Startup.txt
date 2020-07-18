@@ -9,6 +9,6 @@ else
     DebugLog.SetEnable(true, false, false)
 end
 
-DebugLog.Error("Test","Just for test")
-
-
+DebugLog.Error("Test","Test error log")
+DebugLog.Warning("Test","Test warnning log")
+DebugLog.Info("Test","Test Info log")
