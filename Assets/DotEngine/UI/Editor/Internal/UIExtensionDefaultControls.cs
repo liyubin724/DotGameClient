@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Reflection;
 using System.IO;
 using DotEngine.UI;
+using DotEngine.Lua.UI;
 
 namespace DotEditor.UI
 {
@@ -108,6 +109,35 @@ namespace DotEditor.UI
             GameObject go = CreateUIElementRoot("BitmapText", s_ImageElementSize);
             go.AddComponent<BitmapFontUIText>();
             return go;
+        }
+
+        public static GameObject CreateLuaButton(Resources resources)
+        {
+            GameObject buttonRoot = CreateUIElementRoot("LuaButton", s_ThickElementSize);
+
+            GameObject childText = new GameObject("Text");
+            childText.AddComponent<RectTransform>();
+            SetParentAndAlign(childText, buttonRoot);
+
+            Image image = buttonRoot.AddComponent<Image>();
+            image.sprite = resources.standard;
+            image.type = Image.Type.Sliced;
+            image.color = s_DefaultSelectableColor;
+
+            LuaButton bt = buttonRoot.AddComponent<LuaButton>();
+            SetDefaultColorTransitionValues(bt);
+
+            Text text = childText.AddComponent<Text>();
+            text.text = "Lua Button";
+            text.alignment = TextAnchor.MiddleCenter;
+            SetDefaultTextValues(text);
+
+            RectTransform textRectTransform = childText.GetComponent<RectTransform>();
+            textRectTransform.anchorMin = Vector2.zero;
+            textRectTransform.anchorMax = Vector2.one;
+            textRectTransform.sizeDelta = Vector2.zero;
+
+            return buttonRoot;
         }
 
     }

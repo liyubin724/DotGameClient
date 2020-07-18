@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using XLua;
 
 namespace DotEngine.Lua.Register
@@ -38,31 +39,60 @@ namespace DotEngine.Lua.Register
         {
             InitLua();
 
-            bindScript.CallAction(LuaConst.AWAKE_FUNCTION_NAME);
+            CallAction(LuaConst.AWAKE_FUNCTION_NAME);
         }
 
         protected virtual void Start()
         {
-            bindScript.CallAction(LuaConst.START_FUNCTION_NAME);
+            CallAction(LuaConst.START_FUNCTION_NAME);
         }
 
         protected virtual void OnEnable()
         {
-            bindScript.CallAction(LuaConst.ENABLE_FUNCTION_NAME);
+            CallAction(LuaConst.ENABLE_FUNCTION_NAME);
         }
 
         protected virtual void OnDisable()
         {
-            bindScript.CallAction(LuaConst.DISABLE_FUNCTION_NAME);
+            CallAction(LuaConst.DISABLE_FUNCTION_NAME);
         }
 
         protected virtual void OnDestroy()
         {
             if(bindScript.IsValid())
             {
-                bindScript.CallAction(LuaConst.DESTROY_FUNCTION_NAME);
+                CallAction(LuaConst.DESTROY_FUNCTION_NAME);
                 bindScript.Dispose();
             }
         }
+
+        public void CallAction(string funcName)
+        {
+            bindScript.CallAction(funcName);
+        }
+
+        public void CallAction<T>(string funcName, T value)
+        {
+            bindScript.CallAction<T>(funcName, value);
+        }
+
+        public void CallAction<T1, T2>(string funcName, T1 value1, T2 value2)
+        {
+            bindScript.CallAction<T1, T2>(funcName, value1, value2);
+        }
+
+        public R CallFunc<R>(string funcName)
+        {
+            return bindScript.CallFunc<R>(funcName);
+        }
+
+        public R CallFunc<T, R>(string funcName, T value)
+        {
+            return bindScript.CallFunc<T, R>(funcName,value);
+        }
+        public R CallFunc<T1, T2, R>(string funcName, T1 value1, T2 value2)
+        {
+            return bindScript.CallFunc<T1, T2, R>(funcName, value1, value2);
+        }    
     }
 }

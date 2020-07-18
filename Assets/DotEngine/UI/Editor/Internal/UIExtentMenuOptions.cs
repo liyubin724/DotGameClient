@@ -62,7 +62,13 @@ namespace DotEditor.UI
             PlaceUIElementRoot(go, menuCommand);
         }
 
-        
+        [MenuItem("GameObject/UI/DotEngine.Lua/Button", false, 1100)]
+        static public void AddLuaButton(MenuCommand menuCommand)
+        {
+            GameObject go = UIExtensionDefaultControls.CreateLuaButton(GetStandardResources());
+            PlaceUIElementRoot(go, menuCommand);
+        }
+
         private static void SetPositionVisibleinSceneView(RectTransform canvasRTransform, RectTransform itemTransform)
         {
             // Find the best scene view

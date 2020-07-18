@@ -154,5 +154,22 @@ namespace DotEngine.Lua
             }
             return default(R);
         }
+
+        public R CallFunc<T1,T2, R>(string funcName, T1 value1,T2 value2)
+        {
+            if (ObjTable != null)
+            {
+                Func<LuaTable, T1,T2, R> func = ObjTable.Get<Func<LuaTable, T1,T2, R>>(funcName);
+                if (func != null)
+                {
+                    return func(ObjTable, value1,value2);
+                }
+                else
+                {
+                    LogUtil.LogError(LuaConst.LOGGER_NAME, "LuaBindScript::CallFunc->function not found.name = " + funcName);
+                }
+            }
+            return default(R);
+        }
     }
 }

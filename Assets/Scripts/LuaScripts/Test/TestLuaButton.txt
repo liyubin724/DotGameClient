@@ -1,0 +1,9 @@
+TestLuaButton =
+    Class(
+    function(self)
+    end
+)
+
+function TestLuaButton:OnClick()
+    DebugLog.Info("TestLuaButton","Button Clicked")
+end
