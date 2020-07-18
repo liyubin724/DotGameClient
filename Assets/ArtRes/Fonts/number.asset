@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1492591792, guid: 26a9683362869fb4f97fac8f42f3ed52, type: 3}
-  m_Name: bmf_number
+  m_Name: number
   m_EditorClassIdentifier: 
-  outputAssetDir: Assets/ArtRes/Fonts
+  outputAssetDir: Assets/ArtRes/Fonts/BMFonts
   padding: 2
   maxSize: 1024
   fontChars:

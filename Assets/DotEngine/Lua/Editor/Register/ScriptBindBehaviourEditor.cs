@@ -6,21 +6,18 @@ namespace DotEditor.Lua.Register
     [CustomEditor(typeof(ScriptBindBehaviour))]
     public class ScriptBindBehaviourEditor : Editor
     {
-        SerializedProperty envNameProperty;
-        SerializedProperty luaAssetProperty;
+        SerializedProperty bindScriptProperty;
 
         protected virtual void OnEnable()
         {
-            envNameProperty = serializedObject.FindProperty("envName");
-            luaAssetProperty = serializedObject.FindProperty("luaAsset");
+            bindScriptProperty = serializedObject.FindProperty("bindScript");
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
             {
-                EditorGUILayout.PropertyField(envNameProperty);
-                EditorGUILayout.PropertyField(luaAssetProperty);
+                EditorGUILayout.PropertyField(bindScriptProperty);
             }
             serializedObject.ApplyModifiedProperties();
         }

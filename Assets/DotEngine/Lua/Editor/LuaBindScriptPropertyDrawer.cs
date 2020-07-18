@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace DotEditor.Lua
 {
-    [CustomPropertyDrawer(typeof(LuaAsset))]
-    public class LuaAssetPropertyDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(LuaBindScript))]
+    public class LuaBindScriptPropertyDrawer : PropertyDrawer
     {
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return EditorGUIUtility.singleLineHeight * 2;
+            return EditorGUIUtility.singleLineHeight * 3;
         }
 
         public override bool CanCacheInspectorGUI(SerializedProperty property)
@@ -19,7 +19,11 @@ namespace DotEditor.Lua
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            SerializedProperty scriptPathProperty = property.FindPropertyRelative("scriptFilePath");
+            SerializedProperty envNameProperty = property.FindPropertyRelative("m_EnvName");
+            SerializedProperty scriptPathProperty = property.FindPropertyRelative("m_ScriptFilePath");
+
+            Rect nameRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
+            EditorGUI.PropertyField(nameRect, envNameProperty);
 
             TextAsset scriptAsset = null;
             string scriptAssetPath = string.Empty;
@@ -27,7 +31,7 @@ namespace DotEditor.Lua
             {
                 scriptAssetPath = LuaConst.GetScriptAssetPath(scriptPathProperty.stringValue);
                 scriptAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(scriptAssetPath);
-                if(scriptAsset == null)
+                if (scriptAsset == null)
                 {
                     scriptAsset = null;
                     scriptPathProperty.stringValue = null;
@@ -35,31 +39,31 @@ namespace DotEditor.Lua
                 }
             }
 
-            Rect rect = position;
-            rect.height = EditorGUIUtility.singleLineHeight;
-            TextAsset newScriptAsset = (TextAsset)EditorGUI.ObjectField(rect, "Lua Script", scriptAsset, typeof(TextAsset), false);
+            Rect scriptRect = nameRect;
+            scriptRect.y += nameRect.height;
+            TextAsset newScriptAsset = (TextAsset)EditorGUI.ObjectField(scriptRect, "Lua Script", scriptAsset, typeof(TextAsset), false);
 
-            rect.y += rect.height;
-            rect.x += 20;
-            rect.width -= 20;
+            scriptRect.y += scriptRect.height;
+            scriptRect.x += 20;
+            scriptRect.width -= 20;
             EditorGUI.BeginDisabledGroup(true);
             {
-                EditorGUI.TextField(rect, "Script Path",scriptAssetPath);
+                EditorGUI.TextField(scriptRect, "Script Path", scriptAssetPath);
             }
             EditorGUI.EndDisabledGroup();
 
             if (newScriptAsset != scriptAsset)
             {
-                if(newScriptAsset == null)
+                if (newScriptAsset == null)
                 {
                     scriptPathProperty.stringValue = null;
-                }else
+                }
+                else
                 {
                     string assetPath = AssetDatabase.GetAssetPath(newScriptAsset);
                     scriptPathProperty.stringValue = LuaConst.GetScriptPath(assetPath);
                 }
             }
         }
-
     }
 }

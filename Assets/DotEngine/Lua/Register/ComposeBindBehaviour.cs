@@ -7,8 +7,8 @@
 
         protected override void OnInitFinished()
         {
-            registerObjectData.RegisterToLua(luaEnv, ObjTable);
-            registerBehaviourData.RegisterToLua(luaEnv, ObjTable);
+            registerObjectData.RegisterToLua(Env, ObjTable);
+            registerBehaviourData.RegisterToLua(Env, ObjTable);
         }
     }
 }
