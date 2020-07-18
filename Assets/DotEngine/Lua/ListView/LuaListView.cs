@@ -3,13 +3,14 @@ using DotEngine.Log;
 using SuperScrollView;
 using UnityEngine;
 using UnityEngine.UI;
+using XLua;
 
 namespace DotEngine.Lua.ListView
 {
     [RequireComponent(typeof(ScrollRect))]
     public class LuaListView : LoopListView2
     {
-        private const string CONTROLLER_NAME = "listView";
+        private const string CONTROLLER_NAME = "view";
         private const string GET_ITEM_FUNC_NAME = "GetItemName";
         private const string SET_DATA_FUNC_NAME = "SetItemData";
 
@@ -24,6 +25,20 @@ namespace DotEngine.Lua.ListView
         protected virtual void OnInitFinished()
         {
             bindScript.ObjTable.Set(CONTROLLER_NAME, this);
+        }
+
+        protected virtual void Start()
+        {
+            bindScript.CallAction(LuaConst.START_FUNCTION_NAME);
+        }
+
+        protected virtual void OnDestroy()
+        {
+            if(bindScript.IsValid())
+            {
+                bindScript.CallAction(LuaConst.DESTROY_FUNCTION_NAME);
+                bindScript.Dispose();
+            }
         }
 
         public void InitListView(int tototalCount)
@@ -42,7 +57,7 @@ namespace DotEngine.Lua.ListView
             LoopListViewItem2 item = listView.NewListViewItem(itemName);
             if(item is LuaListViewItem viewItem)
             {
-                viewItem.SetItemData(index);
+                bindScript.CallAction<int, LuaTable>(SET_DATA_FUNC_NAME, index, viewItem.ObjTable);
             }
             else
             {

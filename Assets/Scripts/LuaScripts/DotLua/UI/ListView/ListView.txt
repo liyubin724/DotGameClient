@@ -1,0 +1,26 @@
+ListView =
+    Class(
+    function(self)
+        self.view = nil
+    end
+)
+
+function ListView:DoAwake()
+
+end
+
+function ListView:DoStart()
+
+end
+
+function ListView:DoDestroy()
+
+end
+
+function ListView:GetItemName()
+
+end
+
+function ListView:SetItemData(index,viewItem)
+
+end
