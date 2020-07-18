@@ -111,7 +111,7 @@ namespace DotEditor.UI
             return go;
         }
 
-        public static GameObject CreateLuaButton(Resources resources)
+        public static GameObject CreateLuaButton<T>(Resources resources) where T:Image
         {
             GameObject buttonRoot = CreateUIElementRoot("LuaButton", s_ThickElementSize);
 
@@ -119,9 +119,9 @@ namespace DotEditor.UI
             childText.AddComponent<RectTransform>();
             SetParentAndAlign(childText, buttonRoot);
 
-            Image image = buttonRoot.AddComponent<Image>();
+            T image = buttonRoot.AddComponent<T>();
             image.sprite = resources.standard;
-            image.type = Image.Type.Sliced;
+            image.type = Image.Type.Simple;
             image.color = s_DefaultSelectableColor;
 
             LuaButton bt = buttonRoot.AddComponent<LuaButton>();
@@ -139,6 +139,7 @@ namespace DotEditor.UI
 
             return buttonRoot;
         }
+
 
     }
 }

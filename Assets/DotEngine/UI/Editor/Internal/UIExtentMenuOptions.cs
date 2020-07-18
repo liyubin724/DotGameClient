@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using DotEngine.UI;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -62,10 +63,17 @@ namespace DotEditor.UI
             PlaceUIElementRoot(go, menuCommand);
         }
 
-        [MenuItem("GameObject/UI/DotEngine.Lua/Button", false, 1100)]
-        static public void AddLuaButton(MenuCommand menuCommand)
+        [MenuItem("GameObject/UI/DotEngine.Lua/Button(Image)", false, 1100)]
+        static public void AddLuaButtonWithImage(MenuCommand menuCommand)
         {
-            GameObject go = UIExtensionDefaultControls.CreateLuaButton(GetStandardResources());
+            GameObject go = UIExtensionDefaultControls.CreateLuaButton<Image>(GetStandardResources());
+            PlaceUIElementRoot(go, menuCommand);
+        }
+
+        [MenuItem("GameObject/UI/DotEngine.Lua/Button(Atlas Image)", false, 1101)]
+        static public void AddLuaButtonWithAtlasImage(MenuCommand menuCommand)
+        {
+            GameObject go = UIExtensionDefaultControls.CreateLuaButton<UIAtlasImage>(GetStandardResources());
             PlaceUIElementRoot(go, menuCommand);
         }
 

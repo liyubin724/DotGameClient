@@ -11,14 +11,12 @@ namespace DotEngine.Lua.UI
         public ScriptBindBehaviour bindBehaviour;
         public string funcName;
 
-        public bool IsValid()
+        public void InvokeClicked()
         {
-            return bindBehaviour != null && !string.IsNullOrEmpty(funcName);
-        }
-
-        public void Invoke()
-        {
-            bindBehaviour.CallAction(funcName);
+            if(bindBehaviour != null && !string.IsNullOrEmpty(funcName))
+            {
+                bindBehaviour.CallAction(funcName);
+            }
         }
     }
 
@@ -34,10 +32,7 @@ namespace DotEngine.Lua.UI
 
         private void OnClick()
         {
-            if(m_ButtonData!=null && m_ButtonData.IsValid())
-            {
-                m_ButtonData.Invoke();
-            }
+            m_ButtonData?.InvokeClicked();
         }
     }
 }
