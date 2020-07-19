@@ -121,11 +121,14 @@ namespace DotEditor.UI
 
             T image = buttonRoot.AddComponent<T>();
             image.sprite = resources.standard;
-            image.type = Image.Type.Simple;
+            image.type = Image.Type.Sliced;
             image.color = s_DefaultSelectableColor;
 
-            LuaButton bt = buttonRoot.AddComponent<LuaButton>();
+            Button bt = buttonRoot.AddComponent<Button>();
             SetDefaultColorTransitionValues(bt);
+
+            ButtonLuaHandler handler = buttonRoot.AddComponent<ButtonLuaHandler>();
+            handler.button = bt;
 
             Text text = childText.AddComponent<Text>();
             text.text = "Lua Button";
@@ -140,6 +143,55 @@ namespace DotEditor.UI
             return buttonRoot;
         }
 
+        public static GameObject CreateInputField(Resources resources)
+        {
+            GameObject root = CreateUIElementRoot("LuaInputField", s_ThickElementSize);
 
+            GameObject childPlaceholder = CreateUIObject("Placeholder", root);
+            GameObject childText = CreateUIObject("Text", root);
+
+            Image image = root.AddComponent<Image>();
+            image.sprite = resources.inputField;
+            image.type = Image.Type.Sliced;
+            image.color = s_DefaultSelectableColor;
+
+            InputField inputField = root.AddComponent<InputField>();
+            SetDefaultColorTransitionValues(inputField);
+
+            InputFieldLuaHandler handler = root.AddComponent<InputFieldLuaHandler>();
+            handler.inputField = inputField;
+
+            Text text = childText.AddComponent<Text>();
+            text.text = "";
+            text.supportRichText = false;
+            SetDefaultTextValues(text);
+
+            Text placeholder = childPlaceholder.AddComponent<Text>();
+            placeholder.text = "Enter text...";
+            placeholder.fontStyle = FontStyle.Italic;
+            // Make placeholder color half as opaque as normal text color.
+            Color placeholderColor = text.color;
+            placeholderColor.a *= 0.5f;
+            placeholder.color = placeholderColor;
+
+            RectTransform textRectTransform = childText.GetComponent<RectTransform>();
+            textRectTransform.anchorMin = Vector2.zero;
+            textRectTransform.anchorMax = Vector2.one;
+            textRectTransform.sizeDelta = Vector2.zero;
+            textRectTransform.offsetMin = new Vector2(10, 6);
+            textRectTransform.offsetMax = new Vector2(-10, -7);
+
+            RectTransform placeholderRectTransform = childPlaceholder.GetComponent<RectTransform>();
+            placeholderRectTransform.anchorMin = Vector2.zero;
+            placeholderRectTransform.anchorMax = Vector2.one;
+            placeholderRectTransform.sizeDelta = Vector2.zero;
+            placeholderRectTransform.offsetMin = new Vector2(10, 6);
+            placeholderRectTransform.offsetMax = new Vector2(-10, -7);
+
+            inputField.textComponent = text;
+            inputField.placeholder = placeholder;
+
+            return root;
+        }
     }
 }

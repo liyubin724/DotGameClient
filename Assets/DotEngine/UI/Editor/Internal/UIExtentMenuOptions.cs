@@ -1,4 +1,5 @@
-﻿using DotEngine.UI;
+﻿using DotEngine.Lua.UI;
+using DotEngine.UI;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -74,6 +75,13 @@ namespace DotEditor.UI
         static public void AddLuaButtonWithAtlasImage(MenuCommand menuCommand)
         {
             GameObject go = UIExtensionDefaultControls.CreateLuaButton<UIAtlasImage>(GetStandardResources());
+            PlaceUIElementRoot(go, menuCommand);
+        }
+
+        [MenuItem("GameObject/UI/DotEngine.Lua/Input Field", false, 1101)]
+        static public void AddInputField(MenuCommand menuCommand)
+        {
+            GameObject go = UIExtensionDefaultControls.CreateInputField(GetStandardResources());
             PlaceUIElementRoot(go, menuCommand);
         }
 
