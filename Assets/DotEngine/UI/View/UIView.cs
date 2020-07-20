@@ -2,15 +2,17 @@
 
 namespace DotEngine.UI.View
 {
-    public abstract class UIView : MonoBehaviour
+    public class UIView : MonoBehaviour
     {
-        public RectTransform Transfrom { get; private set; }
-
+        public RectTransform ViewTransform { get; private set; }
+        public GameObject ViewGameObject { get; private set; }
+        
         protected UIViewController viewController;
 
         protected virtual void Awake()
         {
-            Transfrom = (RectTransform)transform;
+            ViewTransform = (RectTransform)transform;
+            ViewGameObject = gameObject;
         }
 
         public void SetViewController(UIViewController vc)
@@ -20,7 +22,7 @@ namespace DotEngine.UI.View
 
         public void SetVisible(bool visible)
         {
-            gameObject.SetActive(visible);
+            ViewGameObject.SetActive(visible);
         }
     }
 }

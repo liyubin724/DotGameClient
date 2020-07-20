@@ -7,7 +7,7 @@ using UnityObject = UnityEngine.Object;
 
 namespace DotEngine.UI.View
 {
-    public abstract class UIViewController : ComplexViewController
+    public abstract class UIViewController : ViewController
     {
         public UIView View { get; set; } = null;
         public UIViewController Parent { get; set; } = null;

@@ -1,11 +1,12 @@
-﻿using DotEngine.Log;
+﻿using DotEngine.Framework;
+using DotEngine.Log;
 using DotEngine.Utilities;
 using UnityEngine;
 
 public class StartupBehaviour : MonoBehaviour
 {
     public TextAsset logConfig = null;
-    private GameFacade facade;
+    private IFacade facade;
     void Start()
     {
         //string logConfigText = logConfig.text;
@@ -14,8 +15,7 @@ public class StartupBehaviour : MonoBehaviour
         DotEngine.Log.ILogger logger = new UnityLogger();
         LogUtil.SetLogger(logger);
 
-        facade = new GameFacade();
-
+        facade = GameFacade.GetInstance();
 
         DontDestroyHandler.AddTransform(transform);
     }
@@ -39,5 +39,6 @@ public class StartupBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         LogUtil.DisposeLogger();
+        facade = null;
     }
 }

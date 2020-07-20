@@ -42,7 +42,7 @@ namespace DotEngine.Lua
                 return;
             }
 
-            LuaEnvService service = Facade.GetInstance().RetrieveService<LuaEnvService>(LuaEnvService.NAME);
+            LuaEnvService service = FFacade.GetInstance().RetrieveService<LuaEnvService>(LuaEnvService.NAME);
             Env = service.GetEnv(m_EnvName);
             if (Env == null)
             {

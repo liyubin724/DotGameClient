@@ -8,11 +8,19 @@ using DotEngine.Timer;
 using DotEngine.Utilities;
 using Game.Commands;
 
-public class GameFacade : Facade
+public class GameFacade : FFacade
 {
-    public GameFacade():base()
+    public new static IFacade GetInstance()
     {
-        
+        if(instance == null)
+        {
+            instance = new GameFacade();
+        }
+        return instance;
+    }
+
+    private GameFacade():base()
+    {
     }
 
     protected override void InitializeFacade()
