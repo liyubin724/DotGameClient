@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groupName: UI Prefabs Group
   isEnable: 1
-  isMain: 0
+  isMain: 1
   isPreload: 0
   isNeverDestroy: 0
   operation:

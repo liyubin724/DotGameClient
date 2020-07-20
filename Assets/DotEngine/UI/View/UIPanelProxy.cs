@@ -1,11 +1,5 @@
 ﻿using DotEngine.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityObject = UnityEngine.Object;
-using SystemObject = System.Object;
 
 namespace DotEngine.UI.View
 {
@@ -18,64 +12,121 @@ namespace DotEngine.UI.View
         Append = 0,
         //同层互斥
         LayerMutex,
-        //指定多层互斥
-        MultilayerMutex,
         //导航的形式显示
         Navigate,
+    }
+
+    class PanelData
+    {
+        public UILayerLevel LayerLevel = UILayerLevel.DefaultLayer;
+        public PanelRelationShip RelationShip = PanelRelationShip.Append;
+        public UIPanelController PanelController;
     }
 
     public class UIPanelProxy : Proxy
     {
         public const string NAME = "panelProxy";
 
-        private Dictionary<UILayerLevel, PanelData> panelDataDic = new Dictionary<UILayerLevel, PanelData>();
+        private Dictionary<UILayerLevel, List<PanelData>> panelInLayerDic = new Dictionary<UILayerLevel, List<PanelData>>();
         public UIPanelProxy()
         {
         }
 
         public void SetLayerVisible(UILayerLevel layerLevel,bool visible)
         {
-            
+            UIRoot.Root.GetLayer(layerLevel).Visible = visible;
+        }
+
+        public void RemoveAllPanelInLayer(UILayerLevel layerLevel)
+        {
+            if(panelInLayerDic.TryGetValue(layerLevel,out var panelList) && panelList.Count>0)
+            {
+                for(int i =panelList.Count-1;i>=0;--i)
+                {
+                    FFacade.GetInstance().RemoveViewController(panelList[i].PanelController.Name);
+                }
+                panelList.Clear();
+            }
         }
 
         public void OpenPanel(
-            UIPanelController panelController,
             UILayerLevel layerLevel,
-            PanelRelationShip relationShip = PanelRelationShip.Append,
-            UILayerLevel[] meutexLayerLevels = null)
+            UIPanelController panelController,
+            PanelRelationShip relationShip)
         {
-            if(!panelDataDic.TryGetValue(layerLevel,out var data))
+            PanelData panelData = new PanelData()
             {
-                data = new PanelData();
-                panelDataDic.Add(layerLevel, data);
+                LayerLevel = layerLevel,
+                RelationShip = relationShip,
+                PanelController = panelController,
+            };
+            panelController.LayerLevel = layerLevel;
+
+            if(!panelInLayerDic.TryGetValue(layerLevel,out var panelList))
+            {
+                panelList = new List<PanelData>();
+                panelInLayerDic.Add(layerLevel, panelList);
             }
 
-            if(data.Panels.Count>0)
+            if(panelList.Count>0)
             {
                 if(relationShip == PanelRelationShip.LayerMutex)
                 {
-
-                }else if(relationShip == PanelRelationShip.MultilayerMutex)
-                {
-
+                    RemoveAllPanelInLayer(layerLevel);
                 }else if(relationShip == PanelRelationShip.Navigate)
                 {
-
+                    for (int i = panelList.Count - 1; i >= 0; --i)
+                    {
+                        PanelData prePanelData = panelList[i];
+                        if(panelData.RelationShip == PanelRelationShip.Navigate || panelData.RelationShip == PanelRelationShip.LayerMutex)
+                        {
+                            prePanelData.PanelController.Visible = false;
+                            break;
+                        }else if(panelData.RelationShip == PanelRelationShip.Append)
+                        {
+                            prePanelData.PanelController.Visible = false;
+                        }
+                    }
                 }
             }
-            data.Panels.Add(panelController);
-            Facade.RegisterViewController(panelController.Name, panelController);
+            panelList.Add(panelData);
+            FFacade.GetInstance().RegisterViewController(panelController.Name, panelController);
         }
 
         public void ClosePanel(UIPanelController panelController)
         {
-
-        }
-       
-        class PanelData
-        {
-            public bool Visible = true;
-            public List<UIPanelController> Panels = new List<UIPanelController>();
+            if (panelInLayerDic.TryGetValue(panelController.LayerLevel, out var panelList))
+            {
+                PanelData panelData = null;
+                for (int i = panelList.Count - 1; i >= 0; --i)
+                {
+                    PanelData pData = panelList[i];
+                    if(panelData == null)
+                    {
+                        if (pData.PanelController != panelController)
+                        {
+                            FFacade.GetInstance().RemoveViewController(pData.PanelController.Name);
+                            panelList.RemoveAt(i);
+                        }
+                        else
+                        {
+                            panelData = pData;
+                            panelList.RemoveAt(i);
+                        }
+                    }else
+                    {
+                        if(panelData.RelationShip == PanelRelationShip.Navigate)
+                        {
+                            pData.PanelController.Visible = true;
+                        }
+                        break;
+                    }
+                }
+                if(panelData!=null)
+                {
+                    FFacade.GetInstance().RemoveViewController(panelData.PanelController.Name);
+                }
+            }
         }
     }
 }

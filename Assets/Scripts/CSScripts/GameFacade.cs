@@ -5,6 +5,7 @@ using DotEngine.GOPool;
 using DotEngine.Lua;
 using DotEngine.Net.Services;
 using DotEngine.Timer;
+using DotEngine.UI.View;
 using DotEngine.Utilities;
 using Game.Commands;
 
@@ -65,5 +66,18 @@ public class GameFacade : FFacade
 
         StartupCommand startupCommand = new StartupCommand();
         RegisterCommand(CommandNames.STARTUP, startupCommand);
+
+        TestLoadLoginPanelCommand loadLoginPanelCommand = new TestLoadLoginPanelCommand();
+        RegisterCommand(CommandNames.TEST_LOAD_LOGIN_PANEL, loadLoginPanelCommand);
+
+    }
+
+    protected override void InitializeModel()
+    {
+        base.InitializeModel();
+
+        UIPanelProxy panelProxy = new UIPanelProxy();
+        RegisterProxy(UIPanelProxy.NAME, panelProxy);
+
     }
 }

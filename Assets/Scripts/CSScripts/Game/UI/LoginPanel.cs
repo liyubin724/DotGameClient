@@ -1,18 +1,19 @@
-﻿using System.Collections;
+﻿using DotEngine.UI.View;
+using Game.UI;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoginPanel : MonoBehaviour
+public class LoginPanel : UIPanel
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public void OnCloseBtnClicked()
     {
-        
+        GetController<LoginPanelController>().Closed();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnLoadBtnClicked()
     {
-        
+        GetController<LoginPanelController>().LoadLoginPanel();
     }
 }

@@ -7,7 +7,7 @@ using UnityObject = UnityEngine.Object;
 
 namespace DotEngine.UI.View
 {
-    public abstract class UIViewController : ViewController
+    public class UIViewController : ViewController
     {
         public UIView View { get; set; } = null;
         public UIViewController Parent { get; set; } = null;
@@ -128,10 +128,23 @@ namespace DotEngine.UI.View
 
         public virtual void AddSubView(string name,UIView view)
         {
-
+            Transform transform = View.GetBindTransform(name);
+            if(transform!=null)
+            {
+                view.ViewTransform.SetParent(transform, false);
+            }
         }
 
-        protected internal abstract void OnViewCreated();
-        protected internal abstract void OnViewDestroy();
+        protected internal virtual void OnViewCreated()
+        {
+
+        }
+        protected internal virtual void OnViewDestroy()
+        {
+            if(View!=null)
+            {
+                GameObject.Destroy(View.ViewGameObject);
+            }
+        }
     }
 }

@@ -24,5 +24,10 @@ namespace DotEngine.UI.View
         {
             ViewGameObject.SetActive(visible);
         }
+
+        public virtual Transform GetBindTransform(string name)
+        {
+            return ViewTransform;
+        }
     }
 }

@@ -2,6 +2,9 @@
 using DotEngine.Framework;
 using DotEngine.Log;
 using DotEngine.Lua;
+using DotEngine.UI;
+using DotEngine.UI.View;
+using Game.UI;
 using UnityEngine;
 
 namespace Game.Commands
@@ -24,7 +27,14 @@ namespace Game.Commands
                     new string[] { LuaConst.GetScriptPathFormat() },
                     new string[] { "DotLua/Startup" },
                     "Game/GameEnvManager");
-            }else
+
+                UIPanelProxy panelProxy = FFacade.GetInstance().RetrieveProxy<UIPanelProxy>(UIPanelProxy.NAME);
+                LoginPanelController loginPanelController = new LoginPanelController();
+                loginPanelController.LoadView("login_panel");
+                
+                panelProxy.OpenPanel(UILayerLevel.TopLayer, loginPanelController, PanelRelationShip.Append);
+            }
+            else
             {
                 LogUtil.LogError("Command", "StarupCommand::OnAssetServiceInitFinished->assetService initied failed");
             }

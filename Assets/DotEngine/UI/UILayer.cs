@@ -14,14 +14,31 @@ namespace DotEngine.UI
     public class UILayer : MonoBehaviour
     {
         public UILayerLevel layerLevel = UILayerLevel.DefaultLayer;
-        public RectTransform layerTransform = null;
+
+        public RectTransform LayerTransform { get; private set; }
+        public GameObject LayerGameObject { get; private set; }
+
+        private bool m_Visible = true;
+        public bool Visible
+        {
+            get
+            {
+                return m_Visible;
+            }
+            set
+            {
+                if(m_Visible!=value)
+                {
+                    m_Visible = value;
+                    LayerGameObject.SetActive(m_Visible);
+                }
+            }
+        }
 
         private void Awake()
         {
-            if(layerTransform == null)
-            {
-                layerTransform = (RectTransform)transform;
-            }
+            LayerGameObject = gameObject;
+            LayerTransform = (RectTransform)transform;
         }
     }
 }

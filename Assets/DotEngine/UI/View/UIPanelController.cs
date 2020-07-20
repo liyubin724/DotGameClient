@@ -1,29 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SystemObject = System.Object;
-using UnityObject = UnityEngine.Object;
+﻿using DotEngine.Framework;
 
 namespace DotEngine.UI.View
 {
     public class UIPanelController : UIViewController
     {
         public string Name { get; private set; }
+        public UILayerLevel LayerLevel { get; set; } = UILayerLevel.DefaultLayer;
+
+        public T GetPanel<T>() where T:UIPanel
+        {
+            return (T)View;
+        }
+
         public UIPanelController(string name) : base()
         {
             Name = name;
         }
 
-        protected internal override void OnViewCreated()
+        public virtual void Closed()
         {
-            
+            UIPanelProxy panelProxy = FFacade.GetInstance().RetrieveProxy<UIPanelProxy>(UIPanelProxy.NAME);
+            panelProxy.ClosePanel(this);
         }
 
+        protected internal override void OnViewCreated()
+        {
+            base.OnViewCreated();
+
+            var tran = UIRoot.Root.GetLayer(LayerLevel).transform;
+            View.ViewTransform.SetParent(tran, false);
+        }
+        
         protected internal override void OnViewDestroy()
         {
-            
+            base.OnViewDestroy();
         }
     }
 }

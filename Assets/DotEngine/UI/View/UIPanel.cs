@@ -11,5 +11,9 @@ namespace DotEngine.UI.View
     [RequireComponent(typeof(Canvas),typeof(GraphicRaycaster))]
     public class UIPanel : UIView
     {
+        protected T GetController<T>() where T:UIPanelController
+        {
+            return (T)viewController;
+        }
     }
 }
