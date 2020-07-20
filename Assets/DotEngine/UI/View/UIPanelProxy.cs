@@ -24,17 +24,6 @@ namespace DotEngine.UI.View
         Navigate,
     }
 
-    /// <summary>
-    /// panel依赖关系处理的时机
-    /// </summary>
-    public enum PanelShowOccasion
-    {
-        //立即执行
-        Immediately = 0,
-        //等待显示创建后再执行
-        ViewCreated,
-    }
-
     public class UIPanelProxy : Proxy
     {
         public const string NAME = "panelProxy";
@@ -49,20 +38,44 @@ namespace DotEngine.UI.View
             
         }
 
-        public void OpenPanel()
+        public void OpenPanel(
+            UIPanelController panelController,
+            UILayerLevel layerLevel,
+            PanelRelationShip relationShip = PanelRelationShip.Append,
+            UILayerLevel[] meutexLayerLevels = null)
+        {
+            if(!panelDataDic.TryGetValue(layerLevel,out var data))
+            {
+                data = new PanelData();
+                panelDataDic.Add(layerLevel, data);
+            }
+
+            if(data.Panels.Count>0)
+            {
+                if(relationShip == PanelRelationShip.LayerMutex)
+                {
+
+                }else if(relationShip == PanelRelationShip.MultilayerMutex)
+                {
+
+                }else if(relationShip == PanelRelationShip.Navigate)
+                {
+
+                }
+            }
+            data.Panels.Add(panelController);
+            Facade.RegisterViewController(panelController.Name, panelController);
+        }
+
+        public void ClosePanel(UIPanelController panelController)
         {
 
         }
-        
-        public void ClosePanel()
-        {
-
-        }
-
+       
         class PanelData
         {
-
+            public bool Visible = true;
+            public List<UIPanelController> Panels = new List<UIPanelController>();
         }
-
     }
 }

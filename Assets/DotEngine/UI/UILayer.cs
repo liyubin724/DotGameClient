@@ -14,20 +14,14 @@ namespace DotEngine.UI
     public class UILayer : MonoBehaviour
     {
         public UILayerLevel layerLevel = UILayerLevel.DefaultLayer;
-
-        private RectTransform m_Transform;
-
-        public RectTransform RectTran
-        {
-            get
-            {
-                return m_Transform;
-            }
-        }
+        public RectTransform layerTransform = null;
 
         private void Awake()
         {
-            m_Transform = (RectTransform)transform;
+            if(layerTransform == null)
+            {
+                layerTransform = (RectTransform)transform;
+            }
         }
     }
 }

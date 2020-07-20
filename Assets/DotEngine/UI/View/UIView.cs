@@ -2,17 +2,18 @@
 
 namespace DotEngine.UI.View
 {
-    public abstract class UIBaseView : MonoBehaviour
+    public abstract class UIView : MonoBehaviour
     {
-        public RectTransform RectTran { get; private set; }
-        protected UIBaseViewController viewController;
+        public RectTransform Transfrom { get; private set; }
+
+        protected UIViewController viewController;
 
         protected virtual void Awake()
         {
-            RectTran = (RectTransform)transform;
+            Transfrom = (RectTransform)transform;
         }
 
-        public void SetViewController(UIBaseViewController vc)
+        public void SetViewController(UIViewController vc)
         {
             viewController = vc;
         }

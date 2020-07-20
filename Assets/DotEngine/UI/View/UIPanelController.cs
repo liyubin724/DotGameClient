@@ -8,10 +8,12 @@ using UnityObject = UnityEngine.Object;
 
 namespace DotEngine.UI.View
 {
-    public class UIPanelViewController : UIBaseViewController
+    public class UIPanelController : UIViewController
     {
-        public UIPanelViewController(string name) : base(name)
+        public string Name { get; private set; }
+        public UIPanelController(string name) : base()
         {
+            Name = name;
         }
 
         protected internal override void OnViewCreated()

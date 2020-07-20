@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DotEngine.UI
 {
     [RequireComponent(typeof(Camera))]
     public class UICamera : MonoBehaviour
     {
-        public Camera camera;
+        public Camera uiCamera;
+
+        private void Awake()
+        {
+            if(uiCamera == null )
+            {
+                uiCamera = GetComponent<Camera>();
+            }
+        }
 
     }
 }

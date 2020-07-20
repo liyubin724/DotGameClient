@@ -9,7 +9,7 @@ using UnityEngine.UI;
 namespace DotEngine.UI.View
 {
     [RequireComponent(typeof(Canvas),typeof(GraphicRaycaster))]
-    public class UIPanel : UIBaseView
+    public class UIPanel : UIView
     {
     }
 }

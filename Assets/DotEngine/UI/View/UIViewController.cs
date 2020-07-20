@@ -7,10 +7,10 @@ using UnityObject = UnityEngine.Object;
 
 namespace DotEngine.UI.View
 {
-    public abstract class UIBaseViewController : ComplexViewController
+    public abstract class UIViewController : ComplexViewController
     {
-        private string m_Name;
-        public string Name { get => m_Name; }
+        public UIView View { get; set; } = null;
+        public UIViewController Parent { get; set; } = null;
 
         private bool m_Visible = true;
         public bool Visible
@@ -21,10 +21,10 @@ namespace DotEngine.UI.View
             }
             set
             {
-                if(m_Visible!=value)
+                if (m_Visible != value)
                 {
                     m_Visible = value;
-                    if(View != null)
+                    if (View != null)
                     {
                         View.SetVisible(m_Visible);
                     }
@@ -32,20 +32,14 @@ namespace DotEngine.UI.View
             }
         }
 
-        public UIBaseViewController Parent { get; set; }
-
-        protected UIBaseView View;
-
-        private string m_ViewAddress = string.Empty;
         private AssetHandler m_AssetHandler = null;
 
-        protected UIBaseViewController(string name, string viewAddress = null)
+        public UIViewController():base()
         {
-            m_Name = name;
-            m_ViewAddress = viewAddress;
+
         }
 
-        public void SetView(UIBaseView view)
+        public void SetView(UIView view)
         {
             View = view;
             View.SetViewController(this);
@@ -55,9 +49,9 @@ namespace DotEngine.UI.View
             View.SetVisible(m_Visible);
         }
 
-        public void LoadView()
+        public void LoadView(string address)
         {
-            if(string.IsNullOrEmpty(m_ViewAddress))
+            if(string.IsNullOrEmpty(address))
             {
                 LogUtil.LogError("UI", "UIBaseViewController::LoadView->address is emtpy");
                 return;
@@ -69,7 +63,7 @@ namespace DotEngine.UI.View
             }
 
             AssetService assetService = Facade.RetrieveService<AssetService>(AssetService.NAME);
-            m_AssetHandler = assetService.InstanceAssetAsync(m_ViewAddress, OnViewLoadComplete);
+            m_AssetHandler = assetService.InstanceAssetAsync(address, OnViewLoadComplete);
         }
 
         private void OnViewLoadComplete(string address, UnityObject uObj, SystemObject userData)
@@ -78,7 +72,7 @@ namespace DotEngine.UI.View
 
             if (uObj != null && uObj is GameObject gObj)
             {
-                UIBaseView view = gObj.GetComponent<UIBaseView>();
+                UIView view = gObj.GetComponent<UIView>();
                 if(view == null)
                 {
                     GameObject.Destroy(gObj);
@@ -95,9 +89,6 @@ namespace DotEngine.UI.View
             }
         }
 
-        protected internal abstract void OnViewCreated();
-        protected internal abstract void OnViewDestroy();
-
         public override void OnRegister()
         {
             base.OnRegister();
@@ -113,10 +104,34 @@ namespace DotEngine.UI.View
             }
 
             base.OnRemove();
-
             OnViewDestroy();
 
             View = null;
         }
+
+        public override void AddSubViewController(string name, IViewController viewController)
+        {
+            if(viewController is UIViewController uiVC)
+            {
+                base.AddSubViewController(name, viewController);
+                uiVC.Parent = this;
+            }else
+            {
+                LogUtil.LogError("UI", "UIViewController::AddSubViewController->viewController is not UIViewController");
+            }
+        }
+
+        public override void RemoveSubViewController(string name)
+        {
+            base.RemoveSubViewController(name);
+        }
+
+        public virtual void AddSubView(string name,UIView view)
+        {
+
+        }
+
+        protected internal abstract void OnViewCreated();
+        protected internal abstract void OnViewDestroy();
     }
 }
