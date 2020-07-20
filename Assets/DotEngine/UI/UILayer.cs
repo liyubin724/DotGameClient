@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DotEngine.UI
 {
@@ -21,11 +16,18 @@ namespace DotEngine.UI
         public UILayerLevel layerLevel = UILayerLevel.DefaultLayer;
 
         private RectTransform m_Transform;
+
+        public RectTransform RectTran
+        {
+            get
+            {
+                return m_Transform;
+            }
+        }
+
         private void Awake()
         {
             m_Transform = (RectTransform)transform;
         }
-
-
     }
 }

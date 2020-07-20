@@ -9,7 +9,6 @@ namespace DotEngine.UI
         public static UIRoot Root = null;
 
         public UICamera uiCamera;
-
         public UILayer[] layers = new UILayer[0];
 
         private Dictionary<UILayerLevel, UILayer> layerDic = new Dictionary<UILayerLevel, UILayer>();

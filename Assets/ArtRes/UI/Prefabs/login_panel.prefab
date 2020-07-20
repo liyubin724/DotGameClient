@@ -996,7 +996,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
-  m_ImageAddress: login_bg1
+  m_ImageAddress: login_bg2
   m_IsSetNativeSize: 1
 --- !u!1 &2298706337621821424
 GameObject:
