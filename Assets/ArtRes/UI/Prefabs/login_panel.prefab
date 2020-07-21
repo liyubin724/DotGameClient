@@ -1969,6 +1969,7 @@ GameObject:
   - component: {fileID: 7149897333070543984}
   - component: {fileID: 4309217725831349520}
   - component: {fileID: 4969533081258920044}
+  - component: {fileID: 6252275326819747840}
   m_Layer: 5
   m_Name: login_panel
   m_TagString: Untagged
@@ -2050,6 +2051,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a82d5c1fa4cc074895dd4e420c0d797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6252275326819747840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001224715556202911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4923e8ed71c774d8ec6712cd4cb0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindScript:
+    m_EnvName: 
+    m_ScriptFilePath: 
+  registerBehaviourData:
+    behaviourDatas: []
+    behaviourArrayDatas: []
+  registerObjectData:
+    objectDatas: []
+    objectArrayDatas: []
 --- !u!1 &5327913525060907492
 GameObject:
   m_ObjectHideFlags: 0

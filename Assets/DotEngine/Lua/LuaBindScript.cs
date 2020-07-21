@@ -26,6 +26,15 @@ namespace DotEngine.Lua
 
         private bool m_IsInited = false;
 
+        public LuaBindScript()
+        { }
+
+        public LuaBindScript(string envName,string filePath)
+        {
+            m_EnvName = envName;
+            m_ScriptFilePath = filePath;
+        }
+
         public bool IsValid()
         {
             if (Env == null || !Env.IsValid() || ObjTable == null)

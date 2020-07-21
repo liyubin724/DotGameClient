@@ -1,21 +1,28 @@
-﻿using UnityEngine;
+﻿using DotEngine.Lua.Register;
+using DotEngine.UI.View;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
 
-namespace DotEngine.UI.View
+namespace DotEngine.Lua.UI.View
 {
-    public class UIView : MonoBehaviour
+    public class LuaUIView : ComposeBindBehaviour
     {
         public RectTransform ViewTransform { get; private set; }
         public GameObject ViewGameObject { get; private set; }
-        
-        protected UIViewController viewController;
 
-        protected virtual void Awake()
+        protected LuaUIViewController viewController;
+        protected override void Awake()
         {
             ViewTransform = (RectTransform)transform;
             ViewGameObject = gameObject;
+            base.Awake();
         }
 
-        public virtual void SetViewController(UIViewController vc)
+        public void SetViewController(LuaUIViewController vc)
         {
             viewController = vc;
         }
