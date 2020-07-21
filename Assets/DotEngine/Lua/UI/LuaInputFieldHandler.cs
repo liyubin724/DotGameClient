@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace DotEngine.Lua.UI
 {
     [RequireComponent(typeof(InputField))]
-    public class InputFieldLuaHandler : MonoBehaviour
+    public class LuaInputFieldHandler : MonoBehaviour
     {
         public InputField inputField;
 

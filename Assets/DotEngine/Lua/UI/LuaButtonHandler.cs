@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace DotEngine.Lua.UI
 {
     [RequireComponent(typeof(Button))]
-    public class ButtonLuaHandler : MonoBehaviour
+    public class LuaButtonHandler : MonoBehaviour
     {
         public Button button = null;
 

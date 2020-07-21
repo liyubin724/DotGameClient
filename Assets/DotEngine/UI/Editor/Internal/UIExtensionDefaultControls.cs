@@ -127,7 +127,7 @@ namespace DotEditor.UI
             Button bt = buttonRoot.AddComponent<Button>();
             SetDefaultColorTransitionValues(bt);
 
-            ButtonLuaHandler handler = buttonRoot.AddComponent<ButtonLuaHandler>();
+            LuaButtonHandler handler = buttonRoot.AddComponent<LuaButtonHandler>();
             handler.button = bt;
 
             Text text = childText.AddComponent<Text>();
@@ -158,7 +158,7 @@ namespace DotEditor.UI
             InputField inputField = root.AddComponent<InputField>();
             SetDefaultColorTransitionValues(inputField);
 
-            InputFieldLuaHandler handler = root.AddComponent<InputFieldLuaHandler>();
+            LuaInputFieldHandler handler = root.AddComponent<LuaInputFieldHandler>();
             handler.inputField = inputField;
 
             Text text = childText.AddComponent<Text>();
