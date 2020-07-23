@@ -11,13 +11,6 @@ namespace DotEngine.Lua
     {
         [SerializeField]
         private string m_EnvName = string.Empty;
-        public string EnvName 
-        {
-            get
-            {
-                return m_EnvName;
-            }
-        }
         [SerializeField]
         private string m_ScriptFilePath = null;
 
@@ -81,6 +74,14 @@ namespace DotEngine.Lua
             ObjTable = null;
             Env = null;
             m_IsInited = false;
+        }
+
+        public void SetValue<T>(string name,T value)
+        {
+            if(IsValid())
+            {
+                ObjTable.Set(name, value);
+            }
         }
 
         public void CallAction(string funcName)

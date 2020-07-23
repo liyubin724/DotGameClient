@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using XLua;
 
 namespace DotEngine.Lua.Register
@@ -31,8 +30,8 @@ namespace DotEngine.Lua.Register
 
         protected virtual void OnInitFinished()
         {
-            ObjTable.Set("gameObject", gameObject);
-            ObjTable.Set("transform", transform);
+            SetValue("gameObject", gameObject);
+            SetValue("transform", transform);
         }
 
         protected virtual void Awake()
@@ -64,6 +63,11 @@ namespace DotEngine.Lua.Register
                 CallAction(LuaConst.DESTROY_FUNCTION_NAME);
                 bindScript.Dispose();
             }
+        }
+
+        public void SetValue<T>(string name,T value)
+        {
+            bindScript.SetValue(name, value);
         }
 
         public void CallAction(string funcName)
