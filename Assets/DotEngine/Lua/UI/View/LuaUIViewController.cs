@@ -1,8 +1,9 @@
 ﻿using DotEngine.Asset;
 using DotEngine.Framework;
 using DotEngine.Log;
-using DotEngine.UI.View;
+using DotEngine.UI;
 using UnityEngine;
+using XLua;
 using SystemObject = System.Object;
 using UnityObject = UnityEngine.Object;
 
@@ -10,7 +11,10 @@ namespace DotEngine.Lua.UI.View
 {
     public class LuaUIViewController : ViewController
     {
-        private const string VIEW_CREATE_FUNC_NAME = "OnViewCreated";
+        private const string VIEW_CREATE_FUNC_NAME = "OnViewCreate";
+        private const string VIEW_DESTROY_FUNC_NAME = "OnViewDestroy";
+        private const string ADD_SUB_CONTROLLER_FUNC_NAME = "OnAddSubController";
+        private const string REMOVE_SUB_CONTROLLER_FUNC_NAME = "OnRemoveSubController";
 
         public LuaUIViewController Parent { get; set; } = null;
         public LuaUIView View { get; set; } = null;
@@ -18,17 +22,28 @@ namespace DotEngine.Lua.UI.View
         private LuaBindScript m_BindScript = null;
         private AssetHandler m_AssetHandler = null;
 
+        public LuaTable ObjTable
+        {
+            get
+            {
+                return m_BindScript?.ObjTable;
+            }
+        }
+
         public LuaUIViewController(string envName,string scriptFilePath) : base()
         {
             m_BindScript = new LuaBindScript(envName, scriptFilePath);
         }
 
-        public void SetView(LuaUIView view)
+        public override void OnRegister()
         {
-            View = view;
-            View.SetViewController(this);
+            base.OnRegister();
+            m_BindScript.InitLua(OnLuaInitFinish);
+        }
 
-            OnViewCreated();
+        protected internal virtual void OnLuaInitFinish()
+        {
+            m_BindScript.SetValue<LuaUIViewController>("csController", this);
         }
 
         public void LoadView(string address)
@@ -71,11 +86,53 @@ namespace DotEngine.Lua.UI.View
             }
         }
 
-        public override void OnRegister()
+        public void SetView(LuaUIView view)
         {
-            base.OnRegister();
-            m_BindScript.InitLua(OnLuaInitFinish);
+            View = view;
+            View.SetViewController(this);
+            if(Parent!=null)
+            {
+                m_BindScript.SetValue<LuaTable>("parent", Parent.ObjTable);
+            }
+
+            OnViewCreated();
+
+            view.transform.SetParent(UIRoot.Root.layers[0].LayerTransform, false);
         }
+
+        protected virtual void OnViewCreated()
+        {
+            m_BindScript.SetValue<LuaTable>("view", View.ObjTable);
+            m_BindScript.CallAction(VIEW_CREATE_FUNC_NAME);
+        }
+
+
+        public override void AddSubViewController(string name, IViewController viewController)
+        {
+            if (viewController is LuaUIViewController uiVC)
+            {
+                uiVC.Parent = this;
+                base.AddSubViewController(name, viewController);
+
+                m_BindScript.CallAction<string, LuaTable>(ADD_SUB_CONTROLLER_FUNC_NAME, name, uiVC.ObjTable);
+            }
+            else
+            {
+                LogUtil.LogError("UI", "UIViewController::AddSubViewController->viewController is not UIViewController");
+            }
+        }
+
+        public override void RemoveSubViewController(string name)
+        {
+            IViewController viewController = subControllerDic[name];
+            if(viewController is LuaUIViewController uiVC)
+            {
+                uiVC.Parent = null;
+                m_BindScript.CallAction<string>(REMOVE_SUB_CONTROLLER_FUNC_NAME, name);
+            }
+            base.RemoveSubViewController(name);
+        }
+
 
         public override void OnRemove()
         {
@@ -92,51 +149,9 @@ namespace DotEngine.Lua.UI.View
             View = null;
         }
 
-        public override void AddSubViewController(string name, IViewController viewController)
-        {
-            if (viewController is LuaUIViewController uiVC)
-            {
-                base.AddSubViewController(name, viewController);
-                uiVC.Parent = this;
-            }
-            else
-            {
-                LogUtil.LogError("UI", "UIViewController::AddSubViewController->viewController is not UIViewController");
-            }
-        }
-
-        public override void RemoveSubViewController(string name)
-        {
-            base.RemoveSubViewController(name);
-        }
-
-        public virtual void AddSubView(string name, UIView view)
-        {
-            Transform transform = View.GetBindTransform(name);
-            if (transform != null)
-            {
-                view.ViewTransform.SetParent(transform, false);
-            }
-        }
-
-        protected internal virtual void OnLuaInitFinish()
-        {
-            m_BindScript.ObjTable.Set("viewController", this);
-        }
-
-        private void OnViewCreated()
-        {
-            if(m_BindScript.IsValid())
-            {
-                
-            }
-        }
         protected internal virtual void OnViewDestroy()
         {
-            if (View != null)
-            {
-                GameObject.Destroy(View.ViewGameObject);
-            }
+            m_BindScript.CallAction(VIEW_DESTROY_FUNC_NAME);
         }
     }
 }

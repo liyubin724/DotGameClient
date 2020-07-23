@@ -1,0 +1,14 @@
+require ("DotLua/UI/View/UIViewController")
+
+
+TestViewController =
+    Class(
+    UIViewController,
+    function(self)
+        DebugLog.Info("Test", "TEst VIEC")
+        
+        self._base.init(self)
+
+        DebugLog.Info("Test", self.testValue)
+    end
+)

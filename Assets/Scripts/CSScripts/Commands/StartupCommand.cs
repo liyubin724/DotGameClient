@@ -2,6 +2,7 @@
 using DotEngine.Framework;
 using DotEngine.Log;
 using DotEngine.Lua;
+using DotEngine.Lua.UI.View;
 using DotEngine.UI;
 using DotEngine.UI.View;
 using Game.UI;
@@ -28,11 +29,15 @@ namespace Game.Commands
                     new string[] { "DotLua/Startup" },
                     "Game/GameEnvManager");
 
-                UIPanelProxy panelProxy = FFacade.GetInstance().RetrieveProxy<UIPanelProxy>(UIPanelProxy.NAME);
-                LoginPanelController loginPanelController = new LoginPanelController();
-                loginPanelController.LoadView("login_panel");
+                LuaUIViewController controller = new LuaUIViewController("game", "Test/UI/View/TestViewController");
+                FFacade.GetInstance().RegisterViewController("loginViewC", controller);
+                controller.LoadView("login_panel");
+
+                //UIPanelProxy panelProxy = FFacade.GetInstance().RetrieveProxy<UIPanelProxy>(UIPanelProxy.NAME);
+                //LoginPanelController loginPanelController = new LoginPanelController();
+                //loginPanelController.LoadView("login_panel");
                 
-                panelProxy.OpenPanel(UILayerLevel.TopLayer, loginPanelController, PanelRelationShip.Append);
+                //panelProxy.OpenPanel(UILayerLevel.TopLayer, loginPanelController, PanelRelationShip.Append);
             }
             else
             {

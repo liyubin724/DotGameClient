@@ -1,0 +1,41 @@
+UIViewController =
+    Class(
+    function(self)
+        self.csController = nil
+
+        self.view = nil
+        self.parent = nil
+
+        self.subControllers = nil
+
+        DebugLog.Info("Test","UIVIEW")
+
+        self.testValue = 11
+    end
+)
+
+
+function UIViewController:OnViewCreate()
+
+end
+
+function UIViewController:OnAddSubController(name,controller)
+    if not self.subControllers then
+        self.subControllers = {}
+    end
+
+    self.subControllers[name] = controller
+end
+
+function UIViewController:OnRemoveSubController(name)
+    if self.subControllers then
+        self.subControllers[name] = nil
+    end
+end
+
+function UIViewController:OnViewDestroy()
+    self.csController = nil
+    self.view = nil
+    self.parent = nil
+end
+

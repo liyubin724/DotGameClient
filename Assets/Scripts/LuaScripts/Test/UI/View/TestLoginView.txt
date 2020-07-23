@@ -1,0 +1,14 @@
+require("DotLua/UI/View/UIView")
+
+TestLoginView =
+    Class(
+    UIView,
+    function(self)
+        self._base.init(self)
+
+    end
+)
+
+function TestLoginView:OnStartBtnClick()
+    DebugLog.Info("Test", "Click")
+end

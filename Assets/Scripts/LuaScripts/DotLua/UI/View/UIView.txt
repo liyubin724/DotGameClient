@@ -1,0 +1,10 @@
+UIView =
+    Class(
+    function(self)
+        self.controller = nil
+        self.gameObject = nil
+        self.transform = nil
+    end
+)
+
+
